@@ -1,0 +1,2146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics=""><meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&amp;family=Noto+Sans+KR:wght@300;400;500;700&amp;family=Noto+Serif+KR:wght@300;400;500&amp;family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#E8E4DC;font-family:Archivo,'Noto Sans KR',system-ui,sans-serif}
+a{color:#3E462C;text-decoration:none}a:hover{color:#1F1D1A}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1F1D1A;color:#fff;border-radius:4px;text-decoration:none}
+.dv-tname{font:500 13px/1.2 Archivo,sans-serif;color:#1F1D1A}
+.dv-opts{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1F1D1A;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 Archivo,sans-serif;color:rgba(0,0,0,.55)}
+.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}
+.dv-opt:target .dv-oid{background:#3E462C;color:#fff}
+.dv-next{margin:22px 0 0;font:12px/1.5 Archivo,sans-serif;color:rgba(0,0,0,.5)}
+.dv-note{max-width:900px;font:400 13px/1.7 'Source Serif 4','Noto Serif KR',serif;color:#3a372f}
+.dv-note b{font:500 13px/1.7 Archivo,'Noto Sans KR',sans-serif}
+</style></helmet>
+
+<section class="dv-turn" id="t4">
+<div class="dv-thd"><a class="dv-tid" href="#t4">4</a><span class="dv-tname">에디토리얼 매거진 — 전체 랜딩 (트윅스 22종으로 조정 가능)</span></div>
+<p class="dv-note" style="margin:-8px 0 22px">오른쪽 <b>Tweaks</b> 패널에서 색·타이포·레이아웃·카드·영역을 바꿔가며 검토하세요. 종이 톤 4종, 액센트 5종, 제목 서체 4종, Hero 3종, 카드 4종, 품절 표기 3종, 밀도 3종, 열 수 2–5 조합입니다.</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="4a"><div class="dv-olabel"><a class="dv-oid" href="#4a">4a</a>데스크톱 1440</div>
+<div class="dv-card" style="width:1440px;border-radius:0">
+<div style="{{ sPage }}">
+
+<div style="{{ sUtil }}">
+<span>ISSUE 01 · 2026 SUMMER</span>
+<span>결제 없음 · 주문 요청 후 담당자가 직접 연락드립니다</span>
+<span style="display:flex;gap:18px"><a href="#4a">카카오톡 상담</a><a href="#4a">02-1000-0001</a></span>
+</div>
+
+<div style="{{ sMast }}">
+<div style="display:flex;gap:20px;align-items:center">
+<a href="#4a" style="{{ sUtilLink }}">검색 Search</a>
+<a href="#4a" style="{{ sUtilLink }}">공지</a>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<span style="{{ sWord }}">STORE NUMBER ONE</span>
+<span style="{{ sWordSub }}">스토어 넘버원</span>
+</div>
+<div style="display:flex;gap:18px;align-items:center;justify-content:flex-end">
+<a href="#4a" style="{{ sUtilLink }}">Google로 계속하기</a>
+<a href="#4a" style="{{ sUtilLink }}">장바구니 (2)</a>
+</div>
+</div>
+
+<div style="{{ sNavRow }}">
+<sc-for list="{{ navE }}" as="n" hint-placeholder-count="4">
+<div style="position:relative;padding:6px 0" onMouseEnter="{{ n.onEnter }}" onMouseLeave="{{ n.onLeave }}">
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+<span style="{{ sNavKo }}">{{ n.label }}</span>
+<sc-if value="{{ showEn }}" hint-placeholder-val="{{ true }}"><span style="{{ sNavEn }}">{{ n.en }}</span></sc-if>
+</div>
+<sc-if value="{{ n.open }}" hint-placeholder-val="{{ false }}">
+<div style="{{ sDrop }}">
+<sc-for list="{{ n.items }}" as="it" hint-placeholder-count="5">
+<a href="#4a" style="{{ sDropItem }}">{{ it }}</a>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+
+<sc-if value="{{ heroCover }}" hint-placeholder-val="{{ true }}">
+<div style="padding:0 0 0">
+<div style="{{ sImg }};aspect-ratio:16/6.5;align-items:flex-end;padding-bottom:30px">
+<span style="{{ sPh }}">cover image — 리넨 위 정물, 상품 3점, 자연광 / full-bleed cover</span>
+</div>
+<div style="display:grid;grid-template-columns:1.25fr 1fr;gap:64px;padding:64px 96px 0;align-items:start">
+<div style="display:flex;flex-direction:column;gap:22px">
+<span style="{{ sKicker }}">Cover story — 오래 쓸 물건</span>
+<h1 style="{{ sH1 }}">파는 대신<br>골라 두었습니다</h1>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;padding-top:10px">
+<p style="{{ sLead }}"><sc-if value="{{ dropcap }}" hint-placeholder-val="{{ true }}"><span style="{{ sDropcap }}">스</span></sc-if>토어 넘버원에는 결제창이 없습니다. 뷰티 · 의류 · 식품 · 생활 도구 네 갈래에서 오래 두고 쓸 만한 것만 골라 소개하고, 마음에 드는 물건을 장바구니에 담아 주문 요청을 보내면 담당자가 재고와 배송을 확인해 직접 연락드립니다.</p>
+<div style="display:flex;gap:12px;padding-top:6px">
+<a href="#4a" style="{{ sAccentBtnDark }}">전체 상품 보기</a>
+<a href="#4a" style="{{ sBtnGhost }}">이용 방법</a>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ heroSplit }}" hint-placeholder-val="{{ false }}">
+<div style="display:grid;grid-template-columns:1fr 1.1fr;align-items:stretch">
+<div style="padding:88px 56px 88px 96px;display:flex;flex-direction:column;gap:22px;justify-content:center">
+<span style="{{ sKicker }}">Cover story — 오래 쓸 물건</span>
+<h1 style="{{ sH1 }}">파는 대신<br>골라 두었습니다</h1>
+<p style="{{ sLead }}">결제창이 없습니다. 장바구니에 담아 주문 요청을 보내면 담당자가 재고와 배송을 확인해 연락드립니다.</p>
+<div style="display:flex;gap:12px;padding-top:6px">
+<a href="#4a" style="{{ sAccentBtnDark }}">전체 상품 보기</a>
+<a href="#4a" style="{{ sBtnGhost }}">이용 방법</a>
+</div>
+</div>
+<div style="{{ sImg }};aspect-ratio:auto;min-height:600px;align-items:flex-end;justify-content:flex-start;padding:32px">
+<span style="{{ sPh }}">cover image — 상품 정물, 측광 / split cover</span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ heroType }}" hint-placeholder-val="{{ false }}">
+<div style="padding:110px 96px 96px;display:flex;flex-direction:column;gap:34px">
+<span style="{{ sKicker }}">Issue 01 — Manifesto</span>
+<h1 style="{{ sH1 }}">결제창을 만들지 않았습니다.<br>대신 사람이 답합니다.</h1>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;padding-top:14px;border-top:1px solid rgba(0,0,0,.12)">
+<p style="{{ sBody }}">뷰티 · 의류 · 식품 · 생활 도구 네 갈래에서 오래 두고 쓸 만한 것만 골라 소개합니다.</p>
+<p style="{{ sBody }}">Google 계정으로 로그인해 장바구니에 담고, 주문 요청을 보내면 접수됩니다.</p>
+<p style="{{ sBody }}">담당자가 재고 · 배송 · 결제 방법을 확인해 평일 4시간 내 연락드립니다.</p>
+</div>
+<div style="display:flex;gap:12px">
+<a href="#4a" style="{{ sAccentBtnDark }}">전체 상품 보기</a>
+<a href="#4a" style="{{ sBtnGhost }}">이용 방법</a>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ showNotice }}" hint-placeholder-val="{{ true }}">
+<div style="{{ sNotice }}">
+<span style="{{ sSecNo }}">NOTICE</span>
+<span>8/12–8/14 여름 휴무 · 이 기간 주문 요청은 8/17부터 순차 연락드립니다.</span>
+<a href="#4a">공지 전체</a>
+</div>
+</sc-if>
+
+<div style="{{ sSec }}">
+<div style="{{ sSecHd }}">
+<div style="display:flex;align-items:baseline;gap:16px">
+<sc-if value="{{ secNum }}" hint-placeholder-val="{{ true }}"><span style="{{ sSecNo }}">01</span></sc-if>
+<h2 style="{{ sH2 }}">추천 상품</h2>
+<span style="{{ sKicker }}">Featured — 이달의 선택</span>
+</div>
+<a href="#4a" style="{{ sUtilLink }}">전체 보기 →</a>
+</div>
+<div style="{{ sGrid3 }}">
+<sc-for list="{{ edFeat3 }}" as="p" hint-placeholder-count="3">
+<div style="{{ p.wrapStyle }}">
+<div style="{{ p.imgWrapStyle }}">
+<div style="{{ sImg }}">
+<span style="{{ sPh }}">{{ p.ph }}</span>
+<sc-if value="{{ p.overOn }}" hint-placeholder-val="{{ false }}"><span style="{{ sOverlay }}">SOLD OUT</span></sc-if>
+</div>
+</div>
+<div style="{{ p.padStyle }}">
+<span style="{{ sKicker }}">{{ p.cat }}</span>
+<div style="display:flex;align-items:baseline;gap:9px">
+<span style="{{ sName }}">{{ p.ko }}</span>
+<sc-if value="{{ p.labelOn }}" hint-placeholder-val="{{ false }}"><span style="{{ sSold }}">SOLD OUT</span></sc-if>
+</div>
+<sc-if value="{{ p.enOn }}" hint-placeholder-val="{{ true }}"><span style="{{ sMeta }}">{{ p.en }} · {{ p.spec }}</span></sc-if>
+<p style="{{ sBody }}">{{ p.note }}</p>
+<sc-if value="{{ priceInline }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;align-items:baseline;gap:9px;padding-top:2px">
+<span style="{{ sPrice }}">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="{{ sWas }}">{{ p.was }}원</span></sc-if>
+</div>
+</sc-if>
+<sc-if value="{{ priceStack }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:3px;padding-top:2px">
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="{{ sWas }}">{{ p.was }}원</span></sc-if>
+<span style="{{ sPrice }}">{{ p.price }}원</span>
+</div>
+</sc-if>
+<button style="{{ p.ctaStyle }}">{{ p.ctaLabel }}</button>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="{{ sSec }}">
+<div style="{{ sSecHd }}">
+<div style="display:flex;align-items:baseline;gap:16px">
+<sc-if value="{{ secNum }}" hint-placeholder-val="{{ true }}"><span style="{{ sSecNo }}">02</span></sc-if>
+<h2 style="{{ sH2 }}">인기 상품</h2>
+<span style="{{ sKicker }}">Most requested — 요청 순</span>
+</div>
+<a href="#4a" style="{{ sUtilLink }}">전체 보기 →</a>
+</div>
+<div style="display:flex;flex-direction:column;padding-top:8px">
+<sc-for list="{{ edPop }}" as="p" hint-placeholder-count="5">
+<div style="{{ sRankRow }}">
+<span style="{{ sRankNo }}">{{ p.rank }}</span>
+<div style="{{ sRankImg }}">
+<sc-if value="{{ p.overOn }}" hint-placeholder-val="{{ false }}"><span style="{{ sOverlay }}">SOLD OUT</span></sc-if>
+</div>
+<div style="display:flex;flex-direction:column;gap:7px">
+<span style="{{ sKicker }}">{{ p.cat }}</span>
+<div style="display:flex;align-items:baseline;gap:9px">
+<span style="{{ sName }}">{{ p.ko }}</span>
+<sc-if value="{{ p.labelOn }}" hint-placeholder-val="{{ false }}"><span style="{{ sSold }}">SOLD OUT</span></sc-if>
+</div>
+<sc-if value="{{ p.enOn }}" hint-placeholder-val="{{ true }}"><span style="{{ sMeta }}">{{ p.en }}</span></sc-if>
+</div>
+<div style="display:flex;align-items:baseline;gap:10px">
+<span style="{{ sPrice }}">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="{{ sWas }}">{{ p.was }}원</span></sc-if>
+</div>
+<button style="{{ p.ctaStyle }}">{{ p.ctaLabel }}</button>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="{{ sSec }}">
+<div style="{{ sSecHd }}">
+<div style="display:flex;align-items:baseline;gap:16px">
+<sc-if value="{{ secNum }}" hint-placeholder-val="{{ true }}"><span style="{{ sSecNo }}">03</span></sc-if>
+<h2 style="{{ sH2 }}">최신 상품</h2>
+<span style="{{ sKicker }}">Just arrived — 이번 주 입고</span>
+</div>
+<a href="#4a" style="{{ sUtilLink }}">전체 보기 →</a>
+</div>
+<div style="{{ sGrid }}">
+<sc-for list="{{ edFresh }}" as="p" hint-placeholder-count="4">
+<div style="{{ p.wrapStyle }}">
+<div style="{{ p.imgWrapStyle }}">
+<div style="{{ sImg }}">
+<span style="{{ sPh }}">{{ p.ph }}</span>
+<sc-if value="{{ p.overOn }}" hint-placeholder-val="{{ false }}"><span style="{{ sOverlay }}">SOLD OUT</span></sc-if>
+</div>
+</div>
+<div style="{{ p.padStyle }}">
+<div style="display:flex;align-items:baseline;gap:9px">
+<span style="{{ sName }}">{{ p.ko }}</span>
+<sc-if value="{{ p.labelOn }}" hint-placeholder-val="{{ false }}"><span style="{{ sSold }}">SOLD OUT</span></sc-if>
+</div>
+<sc-if value="{{ p.enOn }}" hint-placeholder-val="{{ true }}"><span style="{{ sMeta }}">{{ p.en }}</span></sc-if>
+<sc-if value="{{ priceInline }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;align-items:baseline;gap:9px">
+<span style="{{ sPrice }}">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="{{ sWas }}">{{ p.was }}원</span></sc-if>
+</div>
+</sc-if>
+<sc-if value="{{ priceStack }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:3px">
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="{{ sWas }}">{{ p.was }}원</span></sc-if>
+<span style="{{ sPrice }}">{{ p.price }}원</span>
+</div>
+</sc-if>
+<button style="{{ p.ctaStyle }}">{{ p.ctaLabel }}</button>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="{{ sSec }}">
+<div style="{{ sSecHd }}">
+<div style="display:flex;align-items:baseline;gap:16px">
+<sc-if value="{{ secNum }}" hint-placeholder-val="{{ true }}"><span style="{{ sSecNo }}">04</span></sc-if>
+<h2 style="{{ sH2 }}">카테고리</h2>
+<span style="{{ sKicker }}">Index — 대분류 4 · 하위 22</span>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;padding-top:8px">
+<sc-for list="{{ cats }}" as="c" hint-placeholder-count="4">
+<div style="{{ sCatRow }}">
+<span style="{{ sSecNo }}">{{ c.no }}</span>
+<div style="display:flex;flex-direction:column;gap:7px">
+<span style="{{ sH3 }}">{{ c.label }}</span>
+<sc-if value="{{ showEn }}" hint-placeholder-val="{{ true }}"><span style="{{ sMeta }}">{{ c.en }}</span></sc-if>
+<span style="{{ sBody }}">{{ c.sub }}</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start">
+<sc-for list="{{ c.items }}" as="it" hint-placeholder-count="6">
+<a href="#4a" style="{{ sChip }}">{{ it }}</a>
+</sc-for>
+</div>
+<div style="{{ sImg }};aspect-ratio:16/9;padding:0 10px">
+<span style="{{ sPh }}">{{ c.ph }}</span>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<sc-if value="{{ showWholesale }}" hint-placeholder-val="{{ true }}">
+<div style="{{ sAccentBlock }}">
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6)">For business</span>
+<h3 style="margin:0;font:400 30px/1.35 'Source Serif 4','Noto Serif KR',serif;color:#fff">대량구매 · 도매 견적 문의</h3>
+<p style="margin:0;max-width:40em;font:300 15px/1.9 'Source Serif 4','Noto Serif KR',serif;color:rgba(255,255,255,.78)">10개 이상 동일 상품, 사업자 납품, 기업 선물 건은 별도 단가로 안내드립니다. 요청서를 남기시면 담당자가 확인 후 연락드립니다.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;flex:none">
+<a href="#4a" style="{{ sAccentBtn }}">견적 문의하기</a>
+<a href="#4a" style="{{ sAccentBtn2 }}">카카오톡 상담</a>
+</div>
+</div>
+</sc-if>
+
+<div style="{{ sSec }}">
+<div style="{{ sSecHd }}">
+<div style="display:flex;align-items:baseline;gap:16px">
+<sc-if value="{{ secNum }}" hint-placeholder-val="{{ true }}"><span style="{{ sSecNo }}">05</span></sc-if>
+<h2 style="{{ sH2 }}">스토어 이용 방법</h2>
+<span style="{{ sKicker }}">How it works — 결제 단계 없음</span>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding-top:0">
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+<div style="{{ sStep }}">
+<span style="{{ sStepNo }}">{{ s.no }}</span>
+<span style="{{ sH3 }}">{{ s.ko }}</span>
+<span style="{{ sBody }}">{{ s.desc }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+
+<sc-if value="{{ showRecent }}" hint-placeholder-val="{{ true }}">
+<div style="{{ sSecTight }}">
+<div style="display:flex;align-items:baseline;gap:12px;padding-bottom:24px">
+<h3 style="margin:0;font:400 15px/1 'Noto Sans KR',sans-serif;color:#1A1A18">최근 본 상품</h3>
+<span style="{{ sKicker }}">Recently viewed</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:20px">
+<sc-for list="{{ recent }}" as="r" hint-placeholder-count="6">
+<a href="#4a" style="display:flex;flex-direction:column;gap:9px">
+<div style="{{ sImg }};aspect-ratio:1/1;padding:0"></div>
+<span style="{{ sBody }}">{{ r.ko }}</span>
+</a>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<div style="{{ sFoot }}">
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="{{ sWord }}">STORE NUMBER ONE</span>
+<span style="{{ sBody }}">오래 쓸 물건을 골라 두는 편집 스토어. 결제 없이 주문을 요청하고, 담당자와 확인 후 받습니다.</span>
+<div style="display:flex;gap:14px;padding-top:6px">
+<a href="#4a" style="{{ sMeta }}">INSTAGRAM</a><a href="#4a" style="{{ sMeta }}">KAKAO</a><a href="#4a" style="{{ sMeta }}">NAVER</a>
+</div>
+</div>
+<sc-for list="{{ foot4 }}" as="f" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:11px">
+<sc-if value="{{ showEn }}" hint-placeholder-val="{{ true }}"><span style="{{ sMeta }}">{{ f.en }}</span></sc-if>
+<span style="font:400 13px/1 'Noto Sans KR',sans-serif;color:#1A1A18">{{ f.ko }}</span>
+<sc-for list="{{ f.items }}" as="it" hint-placeholder-count="4">
+<a href="#4a" style="{{ sBody }}">{{ it }}</a>
+</sc-for>
+</div>
+</sc-for>
+</div>
+<div style="{{ sFootBar }}">
+<span>스토어 넘버원 · 사업자등록번호 000-00-00000 · 서울시 성동구 000로 00 · 대표 000</span>
+<span>© 2026 Store Number One</span>
+</div>
+
+</div>
+</div>
+</div>
+
+<sc-if value="{{ showMobile }}" hint-placeholder-val="{{ true }}">
+<div class="dv-opt" id="4b"><div class="dv-olabel"><a class="dv-oid" href="#4b">4b</a>모바일 390</div>
+<div class="dv-card" style="width:390px;border-radius:0">
+<div style="{{ sPage }}">
+<div style="{{ sUtilMob }}">결제 없음 · 요청 후 담당자 연락</div>
+<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 22px">
+<span style="width:18px;height:12px;border-top:1.2px solid #1A1A18;border-bottom:1.2px solid #1A1A18"></span>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+<span style="{{ sWordMob }}">STORE Nº1</span>
+<span style="{{ sWordSub }}">스토어 넘버원</span>
+</div>
+<span style="{{ sUtilLink }}">담기 (2)</span>
+</div>
+<div style="display:flex;gap:16px;justify-content:center;padding:0 22px 14px;border-bottom:1px solid rgba(0,0,0,.1)">
+<sc-for list="{{ navF }}" as="n" hint-placeholder-count="4">
+<span style="{{ sNavKo }}">{{ n.label }}</span>
+</sc-for>
+</div>
+<div style="{{ sImg }};aspect-ratio:4/5;align-items:flex-end;padding:16px">
+<span style="{{ sPh }}">cover image</span>
+</div>
+<div style="padding:32px 22px 30px;display:flex;flex-direction:column;gap:18px">
+<span style="{{ sKicker }}">Cover story</span>
+<h1 style="{{ sMobH1 }}">파는 대신<br>골라 두었습니다</h1>
+<p style="{{ sBody }}"><sc-if value="{{ dropcap }}" hint-placeholder-val="{{ true }}"><span style="{{ sDropcap }}">스</span></sc-if>토어 넘버원에는 결제창이 없습니다. 담아 두고 주문 요청을 보내면 담당자가 재고와 배송을 확인해 연락드립니다.</p>
+<a href="#4b" style="{{ sAccentBtnDark }}">전체 상품 보기</a>
+</div>
+<div style="padding:0 22px 34px">
+<div style="{{ sSecHd }}">
+<div style="display:flex;align-items:baseline;gap:12px">
+<sc-if value="{{ secNum }}" hint-placeholder-val="{{ true }}"><span style="{{ sSecNo }}">01</span></sc-if>
+<h2 style="{{ sH3 }}">추천 상품</h2>
+</div>
+<a href="#4b" style="{{ sUtilLink }}">전체</a>
+</div>
+<div style="{{ sMobGrid }}">
+<sc-for list="{{ edFeat }}" as="p" hint-placeholder-count="4">
+<div style="{{ p.wrapStyle }}">
+<div style="{{ p.imgWrapStyle }}">
+<div style="{{ sImg }};padding:0">
+<sc-if value="{{ p.overOn }}" hint-placeholder-val="{{ false }}"><span style="{{ sOverlay }}">SOLD OUT</span></sc-if>
+</div>
+</div>
+<div style="{{ p.padStyle }}">
+<div style="display:flex;align-items:baseline;gap:7px">
+<span style="{{ sName }}">{{ p.ko }}</span>
+<sc-if value="{{ p.labelOn }}" hint-placeholder-val="{{ false }}"><span style="{{ sSold }}">SOLD OUT</span></sc-if>
+</div>
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="{{ sPrice }}">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="{{ sWas }}">{{ p.was }}원</span></sc-if>
+</div>
+<button style="{{ p.ctaStyle }}">{{ p.ctaLabel }}</button>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="padding:0 22px 34px">
+<div style="{{ sSecHd }}">
+<div style="display:flex;align-items:baseline;gap:12px">
+<sc-if value="{{ secNum }}" hint-placeholder-val="{{ true }}"><span style="{{ sSecNo }}">02</span></sc-if>
+<h2 style="{{ sH3 }}">인기 상품</h2>
+</div>
+</div>
+<sc-for list="{{ edPop }}" as="p" hint-placeholder-count="5">
+<div style="{{ sRankRowMob }}">
+<span style="{{ sRankNo }}">{{ p.rank }}</span>
+<div style="{{ sRankImgMob }}"></div>
+<div style="display:flex;flex-direction:column;gap:5px;flex:1">
+<div style="display:flex;align-items:baseline;gap:7px">
+<span style="{{ sName }}">{{ p.ko }}</span>
+<sc-if value="{{ p.labelOn }}" hint-placeholder-val="{{ false }}"><span style="{{ sSold }}">SOLD OUT</span></sc-if>
+</div>
+<div style="display:flex;align-items:baseline;gap:7px">
+<span style="{{ sPrice }}">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="{{ sWas }}">{{ p.was }}원</span></sc-if>
+</div>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="padding:0 22px 34px">
+<div style="{{ sSecHd }}">
+<div style="display:flex;align-items:baseline;gap:12px">
+<sc-if value="{{ secNum }}" hint-placeholder-val="{{ true }}"><span style="{{ sSecNo }}">03</span></sc-if>
+<h2 style="{{ sH3 }}">카테고리</h2>
+</div>
+</div>
+<sc-for list="{{ cats }}" as="c" hint-placeholder-count="4">
+<div style="{{ sCatRowMob }}">
+<div style="display:flex;align-items:baseline;gap:10px">
+<span style="{{ sSecNo }}">{{ c.no }}</span>
+<span style="{{ sH3 }}">{{ c.label }}</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:7px">
+<sc-for list="{{ c.items }}" as="it" hint-placeholder-count="6">
+<a href="#4b" style="{{ sChip }}">{{ it }}</a>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="padding:0 22px 34px">
+<div style="{{ sSecHd }}">
+<div style="display:flex;align-items:baseline;gap:12px">
+<sc-if value="{{ secNum }}" hint-placeholder-val="{{ true }}"><span style="{{ sSecNo }}">04</span></sc-if>
+<h2 style="{{ sH3 }}">이용 방법</h2>
+</div>
+</div>
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+<div style="{{ sStepMob }}">
+<span style="{{ sStepNo }}">{{ s.no }}</span>
+<span style="{{ sName }}">{{ s.ko }}</span>
+<span style="{{ sBody }}">{{ s.desc }}</span>
+</div>
+</sc-for>
+</div>
+<div style="{{ sFootMob }}">
+<span style="{{ sWordMob }}">STORE NUMBER ONE</span>
+<span style="{{ sBody }}">오래 쓸 물건을 골라 두는 편집 스토어.</span>
+<div style="display:flex;flex-wrap:wrap;gap:12px 18px">
+<a href="#4b" style="{{ sUtilLink }}">이용 방법</a><a href="#4b" style="{{ sUtilLink }}">배송 안내</a><a href="#4b" style="{{ sUtilLink }}">공지사항</a><a href="#4b" style="{{ sUtilLink }}">문의</a>
+</div>
+<span style="{{ sMeta }}">© 2026 Store Number One</span>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+
+</div>
+<p class="dv-next">다음에 시도해 볼 것: “Hero를 2단 분할로 두고 카드는 패널로” · “밀도 압축 + 5열로 정보량 늘려줘” · “이 스타일로 상품 상세와 장바구니도”</p>
+</section>
+
+<section class="dv-turn" id="t3">
+<div class="dv-thd"><a class="dv-tid" href="#t3">3</a><span class="dv-tname">스타일 견본 15종 — 마음에 드는 번호를 알려주세요</span></div>
+<p class="dv-note" style="margin:-8px 0 22px">각 견본은 헤더 · Hero · 상품 카드만 축약한 미니 목업입니다. 고른 번호로 홈 화면 전체를 만들어 드립니다. 여러 개를 섞어도 됩니다(예: “<a class="dv-oid" href="#3g">3g</a>의 톤 + <a class="dv-oid" href="#3l">3l</a>의 카드”).</p>
+<div class="dv-opts" style="gap:26px">
+
+<div class="dv-opt" id="3a"><div class="dv-olabel"><a class="dv-oid" href="#3a">3a</a>스위스 그리드</div>
+<div class="dv-card" style="width:340px;background:#fff;border-radius:0">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:2px solid #000"><span style="font:700 12px/1 Archivo,sans-serif;letter-spacing:.1em;color:#000">STORE Nº1</span><span style="font:500 9px/1 Archivo,sans-serif;letter-spacing:.14em;color:#000">CART 2</span></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #000"><span style="padding:8px 0;text-align:center;font:400 9px/1 Archivo,sans-serif;letter-spacing:.08em;border-right:1px solid #000;color:#000">뷰티</span><span style="padding:8px 0;text-align:center;font:400 9px/1 Archivo,sans-serif;border-right:1px solid #000;color:#000">의류</span><span style="padding:8px 0;text-align:center;font:400 9px/1 Archivo,sans-serif;border-right:1px solid #000;color:#000">식품</span><span style="padding:8px 0;text-align:center;font:400 9px/1 Archivo,sans-serif;color:#000">생활</span></div>
+<div style="padding:22px 16px 20px;border-bottom:1px solid #000"><span style="font:500 8px/1 Archivo,sans-serif;letter-spacing:.2em;color:#E33">NO CHECKOUT</span><h3 style="margin:8px 0 0;font:700 27px/1.02 Archivo,sans-serif;letter-spacing:-.03em;text-transform:uppercase;color:#000">Objects<br>for a<br>long while</h3></div>
+<div style="display:grid;grid-template-columns:1fr 1fr">
+<div style="padding:12px;border-right:1px solid #000"><div style="aspect-ratio:1/1;background:repeating-linear-gradient(90deg,#eee 0 4px,#fff 4px 8px)"></div><div style="padding-top:8px;font:500 10px/1.4 Archivo,sans-serif;color:#000">밀랍 립밤</div><div style="font:400 9px/1.4 Archivo,sans-serif;color:#666">14,400원</div><div style="margin-top:7px;padding:6px 0;text-align:center;background:#000;color:#fff;font:500 8.5px/1 Archivo,sans-serif;letter-spacing:.08em">ADD</div></div>
+<div style="padding:12px"><div style="aspect-ratio:1/1;background:repeating-linear-gradient(90deg,#eee 0 4px,#fff 4px 8px)"></div><div style="padding-top:8px;font:500 10px/1.4 Archivo,sans-serif;color:#000">황동 스푼</div><div style="font:400 9px/1.4 Archivo,sans-serif;color:#666">22,000원</div><div style="margin-top:7px;padding:6px 0;text-align:center;background:#000;color:#fff;font:500 8.5px/1 Archivo,sans-serif;letter-spacing:.08em">ADD</div></div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="3b"><div class="dv-olabel"><a class="dv-oid" href="#3b">3b</a>에디토리얼 매거진</div>
+<div class="dv-card" style="width:340px;background:#FBF9F4;border-radius:0">
+<div style="display:flex;justify-content:center;padding:14px 16px 10px"><span style="font:400 15px/1 'Source Serif 4',serif;letter-spacing:.22em;color:#1a1a18">STORE Nº1</span></div>
+<div style="display:flex;justify-content:center;gap:12px;padding-bottom:12px;border-bottom:1px solid #d8d2c4"><span style="font:400 9px/1 'Source Serif 4',serif;letter-spacing:.1em;color:#66625a">뷰티</span><span style="font:400 9px/1 'Source Serif 4',serif;color:#66625a">의류</span><span style="font:400 9px/1 'Source Serif 4',serif;color:#66625a">식품</span><span style="font:400 9px/1 'Source Serif 4',serif;color:#66625a">생활 도구</span></div>
+<div style="padding:20px 22px 18px"><span style="font:400 8px/1 Archivo,sans-serif;letter-spacing:.24em;color:#8a6b3a">ISSUE 01 · SUMMER</span><h3 style="margin:9px 0 8px;font:400 30px/1.1 'Source Serif 4',serif;letter-spacing:-.01em;color:#1a1a18">오래 쓸<br><i>물건</i>에 대하여</h3><p style="margin:0;font:300 10px/1.7 'Source Serif 4',serif;color:#66625a;column-count:2;column-gap:14px">결제창은 없습니다. 담아 두고 요청을 보내면 담당자가 재고를 확인해 직접 연락드립니다.</p></div>
+<div style="aspect-ratio:16/9;background:repeating-linear-gradient(135deg,#EDE7DA 0 6px,#F5F0E5 6px 12px)"></div>
+<div style="padding:14px 22px 18px"><div style="display:flex;gap:14px;padding:11px 0;border-bottom:1px solid #d8d2c4"><div style="width:52px;height:52px;flex:none;background:repeating-linear-gradient(135deg,#EDE7DA 0 5px,#F5F0E5 5px 10px)"></div><div><div style="font:400 12px/1.3 'Source Serif 4',serif;color:#1a1a18">밀랍 립밤</div><div style="font:300 9px/1.6 'Source Serif 4',serif;color:#8f8a7f">Beeswax Balm · 9g</div><div style="font:400 11px/1.4 'Source Serif 4',serif;color:#1a1a18">14,400원</div></div></div><div style="display:flex;gap:14px;padding:11px 0"><div style="width:52px;height:52px;flex:none;background:repeating-linear-gradient(135deg,#EDE7DA 0 5px,#F5F0E5 5px 10px)"></div><div><div style="font:400 12px/1.3 'Source Serif 4',serif;color:#1a1a18">리넨 오버셔츠</div><div style="font:300 9px/1.6 'Source Serif 4',serif;color:#8f8a7f">Linen Shirt · 3 col.</div><div style="font:400 11px/1.4 'Source Serif 4',serif;color:#1a1a18">48,000원</div></div></div></div>
+</div></div>
+
+<div class="dv-opt" id="3c"><div class="dv-olabel"><a class="dv-oid" href="#3c">3c</a>터미널 / 모노스페이스</div>
+<div class="dv-card" style="width:340px;background:#0E0F0C;border-radius:0;border-color:#2a2c24">
+<div style="display:flex;justify-content:space-between;padding:11px 14px;border-bottom:1px solid #2a2c24;font:400 10px/1 ui-monospace,Menlo,monospace;color:#B8E986"><span>STORE_NO1</span><span>[cart:02]</span></div>
+<div style="display:flex;gap:10px;padding:9px 14px;border-bottom:1px solid #2a2c24;font:400 9px/1 ui-monospace,Menlo,monospace;color:#6f7565"><span>&gt;뷰티</span><span>의류</span><span>식품</span><span>생활</span></div>
+<div style="padding:18px 14px 16px;border-bottom:1px solid #2a2c24"><div style="font:400 9px/1.8 ui-monospace,Menlo,monospace;color:#6f7565">// no payment gateway</div><h3 style="margin:6px 0 10px;font:400 19px/1.35 ui-monospace,Menlo,monospace;color:#E8E6DE">request(item)<br>→ we call you</h3><div style="display:flex;gap:8px"><span style="padding:6px 11px;background:#B8E986;color:#0E0F0C;font:400 9px/1 ui-monospace,monospace">[browse]</span><span style="padding:6px 11px;border:1px solid #3a3d32;color:#B8E986;font:400 9px/1 ui-monospace,monospace">[how]</span></div></div>
+<div style="padding:12px 14px;font:400 9px/1 ui-monospace,Menlo,monospace;color:#6f7565;display:grid;grid-template-columns:1fr 58px 46px;gap:8px 6px">
+<span style="color:#8f9682">ITEM</span><span style="color:#8f9682">PRICE</span><span style="color:#8f9682">STOCK</span>
+<span style="color:#E8E6DE">밀랍 립밤 / balm</span><span style="color:#E8E6DE">14,400</span><span style="color:#B8E986">+ add</span>
+<span style="color:#E8E6DE">황동 스푼 / spoon</span><span style="color:#E8E6DE">22,000</span><span style="color:#B8E986">+ add</span>
+<span style="color:#E8E6DE">리넨 셔츠 / shirt</span><span style="color:#E8E6DE">48,000</span><span style="color:#B8E986">+ add</span>
+<span style="color:#565b4c">참깨 오일 / oil</span><span style="color:#565b4c">19,000</span><span style="color:#565b4c">sold</span>
+</div>
+<div style="margin:4px 14px 16px;aspect-ratio:16/9;background:repeating-linear-gradient(135deg,#1a1c16 0 6px,#22251c 6px 12px);display:flex;align-items:center;justify-content:center;font:400 8px/1 ui-monospace,monospace;color:#565b4c">[product_image.jpg]</div>
+</div></div>
+
+<div class="dv-opt" id="3d"><div class="dv-olabel"><a class="dv-oid" href="#3d">3d</a>크래프트 페이퍼</div>
+<div class="dv-card" style="width:340px;background:#E4D8C3;border-radius:0;border-color:#c9b795">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:13px 16px"><span style="font:400 13px/1 'Source Serif 4',serif;letter-spacing:.14em;color:#4A3C28">Store Nº1</span><span style="padding:4px 8px;border:1.5px solid #8C5A2B;font:400 8px/1 Archivo,sans-serif;letter-spacing:.1em;color:#8C5A2B;transform:rotate(-2deg)">CART · 2</span></div>
+<div style="display:flex;gap:11px;padding:0 16px 12px;font:400 9.5px/1 'Source Serif 4',serif;color:#6b5a3f"><span>뷰티</span><span>·</span><span>의류</span><span>·</span><span>식품</span><span>·</span><span>생활 도구</span></div>
+<div style="margin:0 16px;padding:18px 0;border-top:1.5px dashed #b8a184;border-bottom:1.5px dashed #b8a184"><h3 style="margin:0 0 8px;font:400 25px/1.2 'Source Serif 4',serif;color:#4A3C28">손이 오래 기억하는<br>물건들</h3><p style="margin:0;font:300 10px/1.75 'Source Serif 4',serif;color:#6b5a3f">결제 없이 요청만 남겨 주세요 — 담당자가 직접 확인해 연락드립니다.</p></div>
+<div style="padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="background:#F0E8D8;padding:9px;box-shadow:2px 2px 0 #c9b795"><div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#DFD2B8 0 5px,#E9E0CB 5px 10px)"></div><div style="padding-top:8px;font:400 11px/1.3 'Source Serif 4',serif;color:#4A3C28">밀랍 립밤</div><div style="font:400 10px/1.5 'Source Serif 4',serif;color:#8C5A2B">14,400원</div><div style="margin-top:6px;padding:6px 0;text-align:center;border:1.5px solid #8C5A2B;font:400 9px/1 'Source Serif 4',serif;color:#8C5A2B">담기</div></div>
+<div style="background:#F0E8D8;padding:9px;box-shadow:2px 2px 0 #c9b795"><div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#DFD2B8 0 5px,#E9E0CB 5px 10px)"></div><div style="padding-top:8px;font:400 11px/1.3 'Source Serif 4',serif;color:#4A3C28">황동 스푼</div><div style="font:400 10px/1.5 'Source Serif 4',serif;color:#8C5A2B">22,000원</div><div style="margin-top:6px;padding:6px 0;text-align:center;border:1.5px solid #8C5A2B;font:400 9px/1 'Source Serif 4',serif;color:#8C5A2B">담기</div></div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="3e"><div class="dv-olabel"><a class="dv-oid" href="#3e">3e</a>일본 미니멀 · 고밀도</div>
+<div class="dv-card" style="width:340px;background:#FCFBF8;border-radius:0;border-color:#e3e0d8">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid #e3e0d8"><span style="font:400 10px/1 'Noto Sans KR',sans-serif;letter-spacing:.16em;color:#33312c">스토어 넘버원</span><span style="font:400 9px/1 'Noto Sans KR',sans-serif;color:#7a776f">장바구니 2</span></div>
+<div style="display:flex;border-bottom:1px solid #e3e0d8"><span style="flex:1;padding:7px 0;text-align:center;font:400 9px/1 'Noto Sans KR',sans-serif;color:#33312c;border-right:1px solid #e3e0d8">뷰티</span><span style="flex:1;padding:7px 0;text-align:center;font:400 9px/1 'Noto Sans KR',sans-serif;color:#33312c;border-right:1px solid #e3e0d8">의류</span><span style="flex:1;padding:7px 0;text-align:center;font:400 9px/1 'Noto Sans KR',sans-serif;color:#33312c;border-right:1px solid #e3e0d8">식품</span><span style="flex:1;padding:7px 0;text-align:center;font:400 9px/1 'Noto Sans KR',sans-serif;color:#33312c">생활 도구</span></div>
+<div style="padding:16px 14px 14px;border-bottom:1px solid #e3e0d8"><h3 style="margin:0 0 6px;font:400 16px/1.5 'Noto Sans KR',sans-serif;color:#33312c">필요한 것을, 필요한 만큼.</h3><p style="margin:0;font:300 9.5px/1.75 'Noto Sans KR',sans-serif;color:#7a776f">온라인 결제 단계가 없습니다. 장바구니에서 주문 요청을 보내면 담당자가 확인 후 연락드립니다. 평일 4시간 내 회신.</p></div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr)">
+<div style="padding:10px;border-right:1px solid #e3e0d8;border-bottom:1px solid #e3e0d8"><div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#EFEDE6 0 4px,#F7F5F0 4px 8px)"></div><div style="padding-top:6px;font:400 9px/1.4 'Noto Sans KR',sans-serif;color:#33312c">밀랍 립밤</div><div style="font:400 8.5px/1.4 'Noto Sans KR',sans-serif;color:#7a776f">14,400원</div></div>
+<div style="padding:10px;border-right:1px solid #e3e0d8;border-bottom:1px solid #e3e0d8"><div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#EFEDE6 0 4px,#F7F5F0 4px 8px)"></div><div style="padding-top:6px;font:400 9px/1.4 'Noto Sans KR',sans-serif;color:#33312c">황동 스푼</div><div style="font:400 8.5px/1.4 'Noto Sans KR',sans-serif;color:#7a776f">22,000원</div></div>
+<div style="padding:10px;border-bottom:1px solid #e3e0d8"><div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#EFEDE6 0 4px,#F7F5F0 4px 8px)"></div><div style="padding-top:6px;font:400 9px/1.4 'Noto Sans KR',sans-serif;color:#33312c">현미차</div><div style="font:400 8.5px/1.4 'Noto Sans KR',sans-serif;color:#7a776f">13,500원</div></div>
+<div style="padding:10px;border-right:1px solid #e3e0d8"><div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#EFEDE6 0 4px,#F7F5F0 4px 8px)"></div><div style="padding-top:6px;font:400 9px/1.4 'Noto Sans KR',sans-serif;color:#33312c">코튼 티셔츠</div><div style="font:400 8.5px/1.4 'Noto Sans KR',sans-serif;color:#7a776f">32,000원</div></div>
+<div style="padding:10px;border-right:1px solid #e3e0d8"><div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#EFEDE6 0 4px,#F7F5F0 4px 8px)"></div><div style="padding-top:6px;font:400 9px/1.4 'Noto Sans KR',sans-serif;color:#33312c">고체 비누</div><div style="font:400 8.5px/1.4 'Noto Sans KR',sans-serif;color:#7a776f">12,000원</div></div>
+<div style="padding:10px"><div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#EFEDE6 0 4px,#F7F5F0 4px 8px)"></div><div style="padding-top:6px;font:400 9px/1.4 'Noto Sans KR',sans-serif;color:#a8a49b">참깨 오일 <span style="font-size:7.5px">품절</span></div><div style="font:400 8.5px/1.4 'Noto Sans KR',sans-serif;color:#a8a49b">19,000원</div></div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="3f"><div class="dv-olabel"><a class="dv-oid" href="#3f">3f</a>바이오필릭 / 자연</div>
+<div class="dv-card" style="width:340px;background:#F2F0E8;border-radius:0;border-color:#dcdccf">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:13px 18px"><span style="font:400 12px/1 'Source Serif 4',serif;letter-spacing:.1em;color:#39442F">Store Nº1</span><span style="padding:5px 12px;background:#fff;border-radius:20px;font:400 9px/1 'Noto Sans KR',sans-serif;color:#39442F">담기 2</span></div>
+<div style="display:flex;gap:6px;padding:0 18px 14px"><span style="padding:6px 12px;background:#8A9A6B;border-radius:20px;font:400 9px/1 'Noto Sans KR',sans-serif;color:#fff">뷰티</span><span style="padding:6px 12px;background:#fff;border-radius:20px;font:400 9px/1 'Noto Sans KR',sans-serif;color:#5a6650">의류</span><span style="padding:6px 12px;background:#fff;border-radius:20px;font:400 9px/1 'Noto Sans KR',sans-serif;color:#5a6650">식품</span><span style="padding:6px 12px;background:#fff;border-radius:20px;font:400 9px/1 'Noto Sans KR',sans-serif;color:#5a6650">생활</span></div>
+<div style="margin:0 18px;border-radius:24px 24px 90px 24px;overflow:hidden;background:#DDE2CE"><div style="aspect-ratio:16/10;background:repeating-linear-gradient(135deg,#D2D9C0 0 7px,#DEE3D0 7px 14px)"></div></div>
+<div style="padding:18px 18px 14px"><h3 style="margin:0 0 7px;font:400 23px/1.25 'Source Serif 4',serif;color:#39442F">천천히 고르고<br>오래 쓰는 일</h3><p style="margin:0;font:300 10px/1.75 'Noto Sans KR',sans-serif;color:#66705c">결제창 없이 요청만 보내면 담당자가 연락드립니다.</p></div>
+<div style="padding:0 18px 18px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div style="background:#fff;border-radius:18px;padding:11px"><div style="aspect-ratio:1/1;border-radius:12px;background:repeating-linear-gradient(135deg,#E4E8D8 0 5px,#EEF1E5 5px 10px)"></div><div style="padding-top:8px;font:400 10.5px/1.3 'Noto Sans KR',sans-serif;color:#39442F">밀랍 립밤</div><div style="font:400 10px/1.5 'Source Serif 4',serif;color:#66705c">14,400원</div><div style="margin-top:7px;padding:7px 0;border-radius:20px;background:#39442F;color:#F2F0E8;text-align:center;font:400 9px/1 'Noto Sans KR',sans-serif">담기</div></div>
+<div style="background:#fff;border-radius:18px;padding:11px"><div style="aspect-ratio:1/1;border-radius:12px;background:repeating-linear-gradient(135deg,#E4E8D8 0 5px,#EEF1E5 5px 10px)"></div><div style="padding-top:8px;font:400 10.5px/1.3 'Noto Sans KR',sans-serif;color:#39442F">황동 스푼</div><div style="font:400 10px/1.5 'Source Serif 4',serif;color:#66705c">22,000원</div><div style="margin-top:7px;padding:7px 0;border-radius:20px;background:#39442F;color:#F2F0E8;text-align:center;font:400 9px/1 'Noto Sans KR',sans-serif">담기</div></div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="3g"><div class="dv-olabel"><a class="dv-oid" href="#3g">3g</a>다크 부티크</div>
+<div class="dv-card" style="width:340px;background:#0B0B0A;border-radius:0;border-color:#26251f">
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:16px 0 12px"><span style="font:400 12px/1 Archivo,sans-serif;letter-spacing:.34em;color:#EDE9DF">STORE NUMBER ONE</span><span style="font:300 7.5px/1 'Noto Sans KR',sans-serif;letter-spacing:.24em;color:#7c7870">스토어 넘버원</span></div>
+<div style="display:flex;justify-content:center;gap:14px;padding-bottom:14px;border-bottom:1px solid #26251f;font:400 9px/1 'Noto Sans KR',sans-serif;color:#a09c93"><span>뷰티</span><span>의류</span><span>식품</span><span>생활 도구</span></div>
+<div style="padding:26px 20px 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px"><span style="font:400 8px/1 Archivo,sans-serif;letter-spacing:.28em;color:#B99B5E">NO CHECKOUT</span><h3 style="margin:0;font:400 26px/1.2 'Source Serif 4',serif;color:#EDE9DF">고른 것만<br>남겨 둡니다</h3><span style="padding:8px 20px;border:1px solid #B99B5E;font:400 9px/1 'Noto Sans KR',sans-serif;color:#B99B5E">셀렉션 보기</span></div>
+<div style="margin:22px 20px 0;aspect-ratio:4/3;background:radial-gradient(circle at 50% 40%,#2a2823 0%,#111110 70%);display:flex;align-items:center;justify-content:center"><span style="font:400 8px/1 ui-monospace,monospace;color:#5c584f">product, single spotlight</span></div>
+<div style="padding:16px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+<div><div style="aspect-ratio:1/1;background:radial-gradient(circle at 50% 45%,#232219 0%,#131311 75%)"></div><div style="padding-top:9px;font:400 10.5px/1.3 'Noto Sans KR',sans-serif;color:#EDE9DF">밀랍 립밤</div><div style="font:400 9.5px/1.6 'Source Serif 4',serif;color:#B99B5E">14,400원</div><div style="margin-top:7px;padding:7px 0;border:1px solid #3a3831;text-align:center;font:400 9px/1 'Noto Sans KR',sans-serif;color:#a09c93">장바구니 담기</div></div>
+<div><div style="aspect-ratio:1/1;background:radial-gradient(circle at 50% 45%,#232219 0%,#131311 75%)"></div><div style="padding-top:9px;font:400 10.5px/1.3 'Noto Sans KR',sans-serif;color:#EDE9DF">리넨 셔츠</div><div style="font:400 9.5px/1.6 'Source Serif 4',serif;color:#B99B5E">48,000원</div><div style="margin-top:7px;padding:7px 0;border:1px solid #3a3831;text-align:center;font:400 9px/1 'Noto Sans KR',sans-serif;color:#a09c93">장바구니 담기</div></div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="3h"><div class="dv-olabel"><a class="dv-oid" href="#3h">3h</a>모노크롬 하이 콘트라스트</div>
+<div class="dv-card" style="width:340px;background:#fff;border-radius:0;border-color:#000">
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 16px 12px"><span style="font:600 16px/1 Archivo,sans-serif;letter-spacing:-.02em;color:#000">Nº1</span><span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.1em;color:#000">2 ITEMS</span></div>
+<div style="height:8px;background:#000"></div>
+<div style="padding:20px 16px 18px"><h3 style="margin:0;font:600 40px/.92 Archivo,sans-serif;letter-spacing:-.045em;color:#000">결제<br>없음.</h3><p style="margin:12px 0 0;font:400 10px/1.7 'Noto Sans KR',sans-serif;color:#000;max-width:24em">담고, 요청하고, 연락받습니다. 그게 전부입니다.</p></div>
+<div style="display:flex;border-top:2px solid #000;border-bottom:2px solid #000"><span style="flex:1;padding:9px 0;text-align:center;font:500 9px/1 'Noto Sans KR',sans-serif;color:#000;border-right:1px solid #000">뷰티</span><span style="flex:1;padding:9px 0;text-align:center;font:500 9px/1 'Noto Sans KR',sans-serif;color:#000;border-right:1px solid #000">의류</span><span style="flex:1;padding:9px 0;text-align:center;font:500 9px/1 'Noto Sans KR',sans-serif;color:#000;border-right:1px solid #000">식품</span><span style="flex:1;padding:9px 0;text-align:center;font:500 9px/1 'Noto Sans KR',sans-serif;color:#000">생활</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr">
+<div style="padding:14px;border-right:2px solid #000"><span style="font:600 22px/1 Archivo,sans-serif;color:#000">01</span><div style="margin-top:8px;aspect-ratio:1/1;background:repeating-linear-gradient(45deg,#000 0 1px,#fff 1px 7px)"></div><div style="padding-top:9px;font:500 11px/1.3 'Noto Sans KR',sans-serif;color:#000">밀랍 립밤</div><div style="font:400 10px/1.5 Archivo,sans-serif;color:#000">14,400원 <s style="color:#999">18,000</s></div><div style="margin-top:8px;padding:8px 0;text-align:center;background:#000;color:#fff;font:500 9px/1 'Noto Sans KR',sans-serif">담기</div></div>
+<div style="padding:14px"><span style="font:600 22px/1 Archivo,sans-serif;color:#000">02</span><div style="margin-top:8px;aspect-ratio:1/1;background:repeating-linear-gradient(45deg,#000 0 1px,#fff 1px 7px)"></div><div style="padding-top:9px;font:500 11px/1.3 'Noto Sans KR',sans-serif;color:#000">황동 스푼</div><div style="font:400 10px/1.5 Archivo,sans-serif;color:#000">22,000원</div><div style="margin-top:8px;padding:8px 0;text-align:center;background:#000;color:#fff;font:500 9px/1 'Noto Sans KR',sans-serif">담기</div></div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="3i"><div class="dv-olabel"><a class="dv-oid" href="#3i">3i</a>컬러 블록</div>
+<div class="dv-card" style="width:340px;background:#FAF7F0;border-radius:0;border-color:#e6ded0">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#1F3A5F"><span style="font:600 12px/1 Archivo,sans-serif;letter-spacing:.08em;color:#FAF7F0">STORE Nº1</span><span style="font:400 9px/1 'Noto Sans KR',sans-serif;color:#c9d6e6">담기 2</span></div>
+<div style="display:flex"><span style="flex:1;padding:9px 0;text-align:center;background:#D9A62E;font:500 9px/1 'Noto Sans KR',sans-serif;color:#2b2410">뷰티</span><span style="flex:1;padding:9px 0;text-align:center;background:#B5644A;font:500 9px/1 'Noto Sans KR',sans-serif;color:#fff">의류</span><span style="flex:1;padding:9px 0;text-align:center;background:#5C7A4A;font:500 9px/1 'Noto Sans KR',sans-serif;color:#fff">식품</span><span style="flex:1;padding:9px 0;text-align:center;background:#1F3A5F;font:500 9px/1 'Noto Sans KR',sans-serif;color:#fff">생활</span></div>
+<div style="padding:22px 18px;background:#D9A62E"><h3 style="margin:0 0 8px;font:600 26px/1.12 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.02em;color:#2b2410">고르는 재미,<br>기다리는 재미</h3><p style="margin:0;font:400 10px/1.7 'Noto Sans KR',sans-serif;color:#4a3f18">결제창 없이 요청 → 담당자 연락</p></div>
+<div style="padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="background:#fff;border:1.5px solid #1F3A5F"><div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#F0E6D2 0 5px,#FAF3E6 5px 10px)"></div><div style="padding:9px 10px 10px"><div style="font:500 8px/1 Archivo,sans-serif;letter-spacing:.1em;color:#D9A62E">BEAUTY</div><div style="padding-top:4px;font:400 10.5px/1.3 'Noto Sans KR',sans-serif;color:#1a1a18">밀랍 립밤</div><div style="font:400 10px/1.5 Archivo,sans-serif;color:#55524a">14,400원</div><div style="margin-top:7px;padding:7px 0;text-align:center;background:#1F3A5F;color:#fff;font:400 9px/1 'Noto Sans KR',sans-serif">담기</div></div></div>
+<div style="background:#fff;border:1.5px solid #1F3A5F"><div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#F0E6D2 0 5px,#FAF3E6 5px 10px)"></div><div style="padding:9px 10px 10px"><div style="font:500 8px/1 Archivo,sans-serif;letter-spacing:.1em;color:#5C7A4A">FOOD</div><div style="padding-top:4px;font:400 10.5px/1.3 'Noto Sans KR',sans-serif;color:#1a1a18">현미 볶음차</div><div style="font:400 10px/1.5 Archivo,sans-serif;color:#55524a">13,500원</div><div style="margin-top:7px;padding:7px 0;text-align:center;background:#1F3A5F;color:#fff;font:400 9px/1 'Noto Sans KR',sans-serif">담기</div></div></div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="3j"><div class="dv-olabel"><a class="dv-oid" href="#3j">3j</a>가로 스크롤 갤러리</div>
+<div class="dv-card" style="width:340px;background:#F7F5F1;border-radius:0;border-color:#e2ded6">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-bottom:1px solid #e2ded6"><span style="font:400 11px/1 Archivo,sans-serif;letter-spacing:.24em;color:#232320">STORE Nº1</span><span style="font:400 9px/1 'Noto Sans KR',sans-serif;color:#6d6a62">담기 2</span></div>
+<div style="padding:20px 16px 14px"><span style="font:400 8px/1 Archivo,sans-serif;letter-spacing:.22em;color:#7a7669">SCROLL →</span><h3 style="margin:8px 0 0;font:400 24px/1.22 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.015em;color:#232320">옆으로 넘기며<br>보는 진열대</h3></div>
+<div style="display:flex;gap:12px;padding:0 0 0 16px;overflow:hidden">
+<div style="width:150px;flex:none"><div style="aspect-ratio:3/4;background:repeating-linear-gradient(135deg,#E8E4DA 0 6px,#F1EEE7 6px 12px)"></div><div style="padding-top:9px;font:400 11px/1.3 'Noto Sans KR',sans-serif;color:#232320">밀랍 립밤</div><div style="font:400 10px/1.6 'Source Serif 4',serif;color:#6d6a62">14,400원</div></div>
+<div style="width:150px;flex:none"><div style="aspect-ratio:3/4;background:repeating-linear-gradient(135deg,#E8E4DA 0 6px,#F1EEE7 6px 12px)"></div><div style="padding-top:9px;font:400 11px/1.3 'Noto Sans KR',sans-serif;color:#232320">리넨 오버셔츠</div><div style="font:400 10px/1.6 'Source Serif 4',serif;color:#6d6a62">48,000원</div></div>
+<div style="width:60px;flex:none"><div style="aspect-ratio:3/8;background:repeating-linear-gradient(135deg,#E8E4DA 0 6px,#F1EEE7 6px 12px)"></div></div>
+</div>
+<div style="display:flex;align-items:center;gap:8px;padding:16px"><span style="flex:1;height:2px;background:#232320"></span><span style="flex:2;height:2px;background:#dcd8ce"></span><span style="font:400 8.5px/1 ui-monospace,monospace;color:#7a7669">01 / 12</span></div>
+<div style="padding:0 16px 18px;display:flex;gap:8px"><span style="flex:1;padding:10px 0;text-align:center;background:#232320;color:#F7F5F1;font:400 9.5px/1 'Noto Sans KR',sans-serif">장바구니 담기</span><span style="padding:10px 14px;border:1px solid #cfcac0;font:400 9.5px/1 'Noto Sans KR',sans-serif;color:#232320">상세</span></div>
+</div></div>
+
+<div class="dv-opt" id="3k"><div class="dv-olabel"><a class="dv-oid" href="#3k">3k</a>비대칭 매니페스토</div>
+<div class="dv-card" style="width:340px;background:#EFEDE6;border-radius:0;border-color:#dcd9cf">
+<div style="display:flex;justify-content:flex-end;gap:12px;padding:12px 16px;font:400 9px/1 'Noto Sans KR',sans-serif;color:#4a4840"><span>뷰티</span><span>의류</span><span>식품</span><span>생활</span><span style="color:#8a5a2b">담기 2</span></div>
+<div style="padding:14px 16px 26px"><span style="font:400 9.5px/1 Archivo,sans-serif;letter-spacing:.2em;color:#8a5a2b">STORE Nº1</span><h3 style="margin:14px 0 0;font:400 33px/1.06 'Source Serif 4',serif;letter-spacing:-.02em;color:#1c1b17">우리는<br>&nbsp;&nbsp;&nbsp;&nbsp;파는 대신<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;권합니다</h3></div>
+<div style="position:relative;height:230px;margin:0 16px 18px">
+<div style="position:absolute;left:0;top:0;width:132px"><div style="aspect-ratio:3/4;background:repeating-linear-gradient(135deg,#E2DED2 0 6px,#EBE8DE 6px 12px)"></div><div style="padding-top:7px;font:400 10px/1.3 'Noto Sans KR',sans-serif;color:#1c1b17">밀랍 립밤</div><div style="font:400 9.5px/1.5 'Source Serif 4',serif;color:#6a675e">14,400원</div></div>
+<div style="position:absolute;right:0;top:44px;width:118px"><div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#E2DED2 0 6px,#EBE8DE 6px 12px)"></div><div style="padding-top:7px;font:400 10px/1.3 'Noto Sans KR',sans-serif;color:#1c1b17">황동 스푼</div><div style="font:400 9.5px/1.5 'Source Serif 4',serif;color:#6a675e">22,000원</div></div>
+<div style="position:absolute;left:34px;bottom:0;width:104px"><div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#E2DED2 0 6px,#EBE8DE 6px 12px)"></div></div>
+<span style="position:absolute;right:6px;bottom:8px;font:300 9px/1.7 'Noto Serif KR',serif;color:#6a675e;text-align:right;max-width:120px">결제창은<br>만들지 않았습니다</span>
+</div>
+</div></div>
+
+<div class="dv-opt" id="3l"><div class="dv-olabel"><a class="dv-oid" href="#3l">3l</a>카탈로그 / 인덱스 (B2B)</div>
+<div class="dv-card" style="width:340px;background:#FDFDFB;border-radius:0;border-color:#dedbd3">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:11px 14px;background:#2E3330"><span style="font:500 10px/1 Archivo,sans-serif;letter-spacing:.16em;color:#F4F3EF">STORE Nº1 · INDEX</span><span style="font:400 9px/1 ui-monospace,monospace;color:#aab0a9">CART 02</span></div>
+<div style="display:flex;justify-content:space-between;padding:9px 14px;border-bottom:1px solid #dedbd3;font:400 9px/1 ui-monospace,monospace;color:#5d625c"><span>총 412 품목</span><span>도매 견적 가능</span><span>업데이트 07.30</span></div>
+<div style="padding:14px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;border-bottom:1px solid #dedbd3"><div style="font:400 11px/1.6 'Noto Sans KR',sans-serif;color:#25281f">결제 없이 <b style="font-weight:500">주문 요청</b>. 수량·단가는 담당자가 회신합니다.</div><span style="padding:8px 12px;background:#25281f;color:#F4F3EF;font:400 9px/1 'Noto Sans KR',sans-serif;white-space:nowrap">견적 요청</span></div>
+<div style="display:grid;grid-template-columns:34px 1fr 52px 46px;font:400 8.5px/1 ui-monospace,monospace;color:#8a8f88;padding:8px 14px;border-bottom:1px solid #dedbd3"><span>IMG</span><span>ITEM / 품목</span><span>PRICE</span><span>ACTION</span></div>
+<div style="padding:0 14px">
+<div style="display:grid;grid-template-columns:34px 1fr 52px 46px;gap:9px;align-items:center;padding:9px 0;border-bottom:1px solid #eae7df"><span style="width:30px;height:30px;background:repeating-linear-gradient(135deg,#E9E6DD 0 4px,#F3F1EA 4px 8px)"></span><span style="font:400 10px/1.4 'Noto Sans KR',sans-serif;color:#25281f">밀랍 립밤 <span style="font:400 8px/1 ui-monospace,monospace;color:#8a8f88">BM-011</span></span><span style="font:400 9.5px/1 ui-monospace,monospace;color:#25281f">14,400</span><span style="font:400 8.5px/1 'Noto Sans KR',sans-serif;color:#3E6B4E;border:1px solid #b9c9bd;padding:5px 0;text-align:center">담기</span></div>
+<div style="display:grid;grid-template-columns:34px 1fr 52px 46px;gap:9px;align-items:center;padding:9px 0;border-bottom:1px solid #eae7df"><span style="width:30px;height:30px;background:repeating-linear-gradient(135deg,#E9E6DD 0 4px,#F3F1EA 4px 8px)"></span><span style="font:400 10px/1.4 'Noto Sans KR',sans-serif;color:#25281f">황동 계량 스푼 <span style="font:400 8px/1 ui-monospace,monospace;color:#8a8f88">TL-204</span></span><span style="font:400 9.5px/1 ui-monospace,monospace;color:#25281f">22,000</span><span style="font:400 8.5px/1 'Noto Sans KR',sans-serif;color:#3E6B4E;border:1px solid #b9c9bd;padding:5px 0;text-align:center">담기</span></div>
+<div style="display:grid;grid-template-columns:34px 1fr 52px 46px;gap:9px;align-items:center;padding:9px 0;border-bottom:1px solid #eae7df"><span style="width:30px;height:30px;background:repeating-linear-gradient(135deg,#E9E6DD 0 4px,#F3F1EA 4px 8px)"></span><span style="font:400 10px/1.4 'Noto Sans KR',sans-serif;color:#25281f">리넨 오버셔츠 <span style="font:400 8px/1 ui-monospace,monospace;color:#8a8f88">CL-330</span></span><span style="font:400 9.5px/1 ui-monospace,monospace;color:#25281f">48,000</span><span style="font:400 8.5px/1 'Noto Sans KR',sans-serif;color:#3E6B4E;border:1px solid #b9c9bd;padding:5px 0;text-align:center">담기</span></div>
+<div style="display:grid;grid-template-columns:34px 1fr 52px 46px;gap:9px;align-items:center;padding:9px 0 14px"><span style="width:30px;height:30px;background:repeating-linear-gradient(135deg,#EFEDE7 0 4px,#F7F6F1 4px 8px)"></span><span style="font:400 10px/1.4 'Noto Sans KR',sans-serif;color:#a8aca5">참깨 오일 <span style="font:400 8px/1 ui-monospace,monospace">품절</span></span><span style="font:400 9.5px/1 ui-monospace,monospace;color:#a8aca5">19,000</span><span style="font:400 8.5px/1 'Noto Sans KR',sans-serif;color:#a8aca5;border:1px dashed #d5d2ca;padding:5px 0;text-align:center">알림</span></div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="3m"><div class="dv-olabel"><a class="dv-oid" href="#3m">3m</a>스와치 카드 덱</div>
+<div class="dv-card" style="width:340px;background:#EDEAE3;border-radius:0;border-color:#d9d5cb">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:13px 16px"><span style="font:500 11px/1 Archivo,sans-serif;letter-spacing:.2em;color:#242320">STORE Nº1</span><span style="font:400 9px/1 'Noto Sans KR',sans-serif;color:#6b6862">담기 2</span></div>
+<div style="display:flex;gap:0;padding:0 16px"><span style="padding:8px 14px;background:#fff;font:500 9.5px/1 'Noto Sans KR',sans-serif;color:#242320">뷰티</span><span style="padding:8px 14px;font:400 9.5px/1 'Noto Sans KR',sans-serif;color:#8a867e">의류</span><span style="padding:8px 14px;font:400 9.5px/1 'Noto Sans KR',sans-serif;color:#8a867e">식품</span><span style="padding:8px 14px;font:400 9.5px/1 'Noto Sans KR',sans-serif;color:#8a867e">생활</span></div>
+<div style="background:#fff;padding:20px 16px 18px"><h3 style="margin:0 0 16px;font:400 21px/1.3 Archivo,'Noto Sans KR',sans-serif;color:#242320">뷰티 — 6점</h3>
+<div style="position:relative;height:186px">
+<div style="position:absolute;left:60px;top:10px;width:150px;height:170px;background:#F4F2ED;border:1px solid #d9d5cb;transform:rotate(6deg)"></div>
+<div style="position:absolute;left:40px;top:6px;width:150px;height:170px;background:#F8F6F2;border:1px solid #d9d5cb;transform:rotate(-3deg)"></div>
+<div style="position:absolute;left:50px;top:0;width:150px;background:#fff;border:1px solid #cfcbc1;padding:10px">
+<div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#E7E3D9 0 5px,#F1EFE8 5px 10px)"></div>
+<div style="padding-top:8px;font:400 10.5px/1.3 'Noto Sans KR',sans-serif;color:#242320">밀랍 립밤</div>
+<div style="font:400 10px/1.5 'Source Serif 4',serif;color:#6b6862">14,400원 <s style="color:#a8a49b;font-size:9px">18,000</s></div>
+<div style="margin-top:7px;padding:7px 0;text-align:center;background:#242320;color:#fff;font:400 9px/1 'Noto Sans KR',sans-serif">담기</div>
+</div>
+</div>
+<div style="display:flex;justify-content:center;gap:5px;padding-top:6px"><span style="width:16px;height:2px;background:#242320"></span><span style="width:16px;height:2px;background:#d9d5cb"></span><span style="width:16px;height:2px;background:#d9d5cb"></span></div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="3n"><div class="dv-olabel"><a class="dv-oid" href="#3n">3n</a>레트로 상점 간판</div>
+<div class="dv-card" style="width:340px;background:#F6EFE1;border-radius:0;border-color:#c8ae7f">
+<div style="padding:10px 16px;background:#5C1F1B;display:flex;justify-content:space-between;align-items:center"><span style="font:400 9px/1 'Source Serif 4',serif;letter-spacing:.14em;color:#E8C87C">EST. 2026 · SEOUL</span><span style="font:400 9px/1 'Source Serif 4',serif;color:#E8C87C">담기 2</span></div>
+<div style="padding:18px 16px 14px;text-align:center;border-bottom:3px double #C8A052"><div style="font:400 22px/1 'Source Serif 4',serif;letter-spacing:.06em;color:#5C1F1B">Store Number One</div><div style="padding-top:6px;font:400 9px/1 'Noto Sans KR',sans-serif;letter-spacing:.24em;color:#8a6a3a">스토어 넘버원</div></div>
+<div style="display:flex;justify-content:center;gap:12px;padding:10px 0;border-bottom:1px solid #d9c39a;font:400 9.5px/1 'Source Serif 4',serif;color:#5C1F1B"><span>뷰티</span><span>·</span><span>의류</span><span>·</span><span>식품</span><span>·</span><span>생활 도구</span></div>
+<div style="padding:18px 16px;text-align:center"><h3 style="margin:0 0 8px;font:400 24px/1.25 'Source Serif 4',serif;color:#5C1F1B">골라 두는 가게</h3><p style="margin:0;font:400 10px/1.7 'Noto Sans KR',sans-serif;color:#7a5c38">결제는 받지 않습니다. 요청을 남기시면 연락드립니다.</p></div>
+<div style="padding:0 16px 18px;display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="border:1px solid #C8A052;background:#FBF6EA;padding:10px"><div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#EDE0C8 0 5px,#F6EFDE 5px 10px)"></div><div style="padding-top:8px;text-align:center;font:400 11px/1.3 'Source Serif 4',serif;color:#5C1F1B">밀랍 립밤</div><div style="text-align:center;font:400 10px/1.6 'Source Serif 4',serif;color:#8a6a3a">14,400원</div><div style="margin-top:7px;padding:7px 0;text-align:center;background:#5C1F1B;color:#E8C87C;font:400 9px/1 'Noto Sans KR',sans-serif">담기</div></div>
+<div style="border:1px solid #C8A052;background:#FBF6EA;padding:10px"><div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#EDE0C8 0 5px,#F6EFDE 5px 10px)"></div><div style="padding-top:8px;text-align:center;font:400 11px/1.3 'Source Serif 4',serif;color:#5C1F1B">황동 스푼</div><div style="text-align:center;font:400 10px/1.6 'Source Serif 4',serif;color:#8a6a3a">22,000원</div><div style="margin-top:7px;padding:7px 0;text-align:center;background:#5C1F1B;color:#E8C87C;font:400 9px/1 'Noto Sans KR',sans-serif">담기</div></div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="3o"><div class="dv-olabel"><a class="dv-oid" href="#3o">3o</a>브루탈리스트</div>
+<div class="dv-card" style="width:340px;background:#E9E9E4;border-radius:0;border-color:#111">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:3px solid #111"><span style="font:700 13px/1 Archivo,sans-serif;color:#111">STORE№1</span><span style="padding:4px 8px;background:#111;color:#E9E9E4;font:700 9px/1 Archivo,sans-serif">CART:2</span></div>
+<div style="display:flex;gap:6px;padding:10px 12px;border-bottom:3px solid #111"><span style="padding:5px 9px;border:2px solid #111;background:#F5F53C;font:700 9px/1 'Noto Sans KR',sans-serif;color:#111">뷰티</span><span style="padding:5px 9px;border:2px solid #111;font:700 9px/1 'Noto Sans KR',sans-serif;color:#111">의류</span><span style="padding:5px 9px;border:2px solid #111;font:700 9px/1 'Noto Sans KR',sans-serif;color:#111">식품</span><span style="padding:5px 9px;border:2px solid #111;font:700 9px/1 'Noto Sans KR',sans-serif;color:#111">생활</span></div>
+<div style="padding:16px 12px;border-bottom:3px solid #111"><h3 style="margin:0 0 8px;font:700 27px/1.04 Archivo,'Noto Sans KR',sans-serif;color:#111">결제 버튼<br>없습니다.</h3><p style="margin:0 0 10px;font:400 10px/1.6 'Noto Sans KR',sans-serif;color:#111">담아서 요청 → 사람이 연락함. 끝.</p><span style="display:inline-block;padding:9px 16px;border:2px solid #111;background:#F5F53C;font:700 10px/1 'Noto Sans KR',sans-serif;color:#111">상품 보기 →</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr">
+<div style="padding:12px;border-right:3px solid #111"><div style="aspect-ratio:1/1;border:2px solid #111;background:repeating-linear-gradient(135deg,#DCDCD4 0 5px,#EFEFE8 5px 10px)"></div><div style="padding-top:8px;font:700 11px/1.3 'Noto Sans KR',sans-serif;color:#111">밀랍 립밤</div><div style="font:400 10px/1.5 Archivo,sans-serif;color:#111">14,400원</div><div style="margin-top:7px;padding:8px 0;text-align:center;border:2px solid #111;background:#111;color:#E9E9E4;font:700 9px/1 'Noto Sans KR',sans-serif">담기</div></div>
+<div style="padding:12px"><div style="aspect-ratio:1/1;border:2px solid #111;background:repeating-linear-gradient(135deg,#DCDCD4 0 5px,#EFEFE8 5px 10px)"></div><div style="padding-top:8px;font:700 11px/1.3 'Noto Sans KR',sans-serif;color:#111">황동 스푼 <span style="font:700 8px/1 Archivo,sans-serif">품절</span></div><div style="font:400 10px/1.5 Archivo,sans-serif;color:#111">22,000원</div><div style="margin-top:7px;padding:8px 0;text-align:center;border:2px dashed #111;font:700 9px/1 'Noto Sans KR',sans-serif;color:#111">재입고 알림</div></div>
+</div>
+</div></div>
+
+</div>
+<p class="dv-next">다음에 시도해 볼 것: “<a class="dv-oid" href="#3g">3g</a>로 홈 전체 만들어줘” · “<a class="dv-oid" href="#3b">3b</a>랑 <a class="dv-oid" href="#3l">3l</a> 두 개 비교해줘” · “<a class="dv-oid" href="#3f">3f</a>인데 색은 더 차분하게”</p>
+</section>
+
+<section class="dv-turn" id="t0">
+<div class="dv-thd"><a class="dv-tid" href="#t0">0</a><span class="dv-tname">전제 · 디자인 시스템</span></div>
+<div class="dv-note">
+<p style="margin:0 0 10px"><b>전제</b> — 결제창이 없는 <b>주문 요청</b> 플랫폼이므로, 구매 압박 장치(카운트다운·별점·리뷰 수·프로모션 뱃지)를 모두 제거하고 대신 “요청 → 담당자 연락” 절차를 헤더·Hero·이용 방법 3곳에 반복 안내했습니다. 가격대가 1만~5만원대라 가격은 작게, 상품 이미지는 카드 면적의 78%로 크게 잡았습니다.</p>
+<p style="margin:0 0 10px"><b>컬러</b> — 종이 톤 웜 그레이 3단(#F6F3EE · #EDE8E0 · #E3DDD1), 잉크 #1F1D1A, 딥 올리브 #3E462C 를 액션·강조에만. 색은 4개를 넘기지 않습니다.<br>
+<b>타이포</b> — 제목 Archivo + Noto Sans KR / 본문 Source Serif 4 + Noto Serif KR. 한글·영문 병기는 “한글(본문 크기) + 영문(작게, 자간 넓게, 회색)” 2단 규칙으로 고정.<br>
+<b>그리드</b> — 1440 캔버스, 좌우 여백 96px, 12칼럼, 섹션 상하 여백 120px. 카드 간격 32px(가로)/48px(세로).<br>
+<b>이미지</b> — 실제 사진이 없어 스트라이프 플레이스홀더에 무엇이 들어갈지 표기했습니다.<br>
+<b>카테고리 드롭다운</b> — 뷰티·의류·식품·생활 도구 4개 대분류에 하위 메뉴를 붙였습니다. 상단 메뉴에 마우스를 올려보세요(1a·1b·1c 모두 동작).</p>
+<p style="margin:0"><b>세 안의 차이</b> — <a class="dv-oid" href="#1a">1a</a> 미니멀: 테두리 없음, 4열, 중앙 정렬, 여백 최대. <a class="dv-oid" href="#1b">1b</a> 편집숍: 리넨 배경, 3열 대형 카드, 01/02 인덱스와 좌측 정렬 편집 리듬. <a class="dv-oid" href="#1c">1c</a> 갤러리: 올리브 잉크 헤더, 풀블리드 Hero, 미술관 캡션식 상품 정보.</p>
+</div>
+</section>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">홈 화면 3안 — 데스크톱 1440</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a"><div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>미니멀 — 극단적 여백, 4열, 중앙 정렬</div>
+<div class="dv-card" style="width:1440px;background:#F6F3EE">
+
+<div style="display:flex;align-items:center;justify-content:space-between;padding:0 96px;height:34px;background:#EDE8E0;font:400 11px/1 Archivo,'Noto Sans KR',sans-serif;color:#6b665b;letter-spacing:.02em">
+<span>전 상품 국내 배송 · 요청 후 2영업일 내 연락</span>
+<span style="letter-spacing:.14em;text-transform:uppercase;color:#3E462C">결제 없음 · 주문 요청 후 담당자 연락</span>
+<span style="display:flex;gap:18px"><a href="#1a">카카오톡 상담</a><a href="#1a">02-1000-0001</a></span>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:26px 96px 22px;background:#F6F3EE">
+<div style="display:flex;flex-direction:column;gap:5px">
+<span style="font:500 16px/1 Archivo,sans-serif;letter-spacing:.3em;color:#1F1D1A">STORE NUMBER ONE</span>
+<span style="font:300 11px/1 'Noto Sans KR',sans-serif;letter-spacing:.24em;color:#8c8578">스토어 넘버원</span>
+</div>
+<div style="display:flex;gap:34px;align-items:center;position:relative">
+<sc-for list="{{ navA }}" as="n" hint-placeholder-count="4">
+<div style="position:relative;padding:10px 0" onMouseEnter="{{ n.onEnter }}" onMouseLeave="{{ n.onLeave }}">
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer">
+<span style="font:400 14px/1 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ n.label }}</span>
+<span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#a09a8c">{{ n.en }}</span>
+</div>
+<sc-if value="{{ n.open }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;top:44px;left:50%;transform:translateX(-50%);min-width:190px;background:#fff;border:1px solid #E3DDD1;padding:14px 0;display:flex;flex-direction:column;z-index:20;box-shadow:0 12px 32px rgba(31,29,26,.08)">
+<sc-for list="{{ n.items }}" as="it" hint-placeholder-count="5">
+<a href="#1a" style="padding:8px 22px;font:400 13px/1.2 'Noto Serif KR',serif;color:#3a372f;white-space:nowrap" style-hover="background:#F6F3EE">{{ it }}</a>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+<div style="display:flex;gap:22px;align-items:center;justify-content:flex-end;font:400 12px/1 'Noto Sans KR',sans-serif;color:#3a372f">
+<a href="#1a" style="display:flex;align-items:center;gap:7px"><span style="width:11px;height:11px;border:1.2px solid #6b665b;border-radius:50%"></span>검색</a>
+<a href="#1a" style="padding:9px 16px;border:1px solid #1F1D1A;letter-spacing:.02em">Google로 계속하기</a>
+<a href="#1a">장바구니 <span style="color:#3E462C">(2)</span></a>
+</div>
+</div>
+
+<div style="padding:0 96px 96px;background:#F6F3EE">
+<div style="aspect-ratio:16/7;background:repeating-linear-gradient(135deg,#E6E1D6 0 7px,#EDE9E1 7px 14px);display:flex;align-items:flex-end;justify-content:center;padding-bottom:38px">
+<span style="font:400 10px/1 ui-monospace,Menlo,monospace;letter-spacing:.1em;color:#9a9284">hero image — 리넨 위에 놓인 대표 상품 3점, 자연광</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:26px;padding:64px 0 0;text-align:center">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#3E462C">Request, don’t checkout</span>
+<h1 style="margin:0;font:400 58px/1.14 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.02em;color:#1F1D1A;max-width:14em;text-wrap:pretty">오래 쓸 물건만<br>골라 두었습니다</h1>
+<p style="margin:0;max-width:34em;font:300 17px/1.9 'Source Serif 4','Noto Serif KR',serif;color:#55514a;text-wrap:pretty">스토어 넘버원에는 결제창이 없습니다. 마음에 드는 물건을 장바구니에 담아 주문 요청을 보내면, 담당자가 재고와 배송을 확인해 직접 연락드립니다.</p>
+<div style="display:flex;gap:12px;padding-top:10px">
+<a href="#1a" style="padding:15px 32px;background:#1F1D1A;color:#F6F3EE;font:400 13px/1 'Noto Sans KR',sans-serif;letter-spacing:.06em" style-hover="background:#3E462C">전체 상품 보기</a>
+<a href="#1a" style="padding:15px 32px;border:1px solid #C9C2B4;color:#1F1D1A;font:400 13px/1 'Noto Sans KR',sans-serif;letter-spacing:.06em" style-hover="border-color:#1F1D1A">이용 방법 알아보기</a>
+</div>
+</div>
+</div>
+
+<div style="display:flex;align-items:center;justify-content:center;gap:14px;padding:18px 96px;background:#EDE8E0;font:400 12px/1 'Noto Sans KR',sans-serif;color:#55514a">
+<span style="font:500 10px/1 Archivo,sans-serif;letter-spacing:.18em;color:#3E462C">NOTICE</span>
+<span>여름 휴무(8/12–8/14) 기간에는 주문 요청 확인이 하루 지연됩니다.</span>
+<a href="#1a" style="border-bottom:1px solid #C9C2B4">공지 전체</a>
+</div>
+
+<div style="padding:110px 96px 0;background:#F6F3EE">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:44px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#a09a8c">Selected</span>
+<h2 style="margin:0;font:400 28px/1.3 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.01em;color:#1F1D1A">추천 상품</h2>
+</div>
+<a href="#1a" style="font:400 12px/1 'Noto Sans KR',sans-serif;border-bottom:1px solid #C9C2B4;padding-bottom:3px">전체 보기</a>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
+<sc-for list="{{ feat }}" as="p" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#E6E1D6 0 6px,#EFEBE3 6px 12px);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 16px">
+<span style="font:400 9.5px/1.6 ui-monospace,Menlo,monospace;letter-spacing:.06em;color:#9a9284">{{ p.ph }}</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font:400 15px/1.4 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ p.ko }}</span>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}"><span style="font:500 9px/1 Archivo,sans-serif;letter-spacing:.14em;color:#a09a8c">SOLD OUT</span></sc-if>
+</div>
+<span style="font:400 10.5px/1 Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#a09a8c">{{ p.en }}</span>
+</div>
+<div style="display:flex;align-items:baseline;gap:9px">
+<span style="font:400 15px/1 'Source Serif 4',serif;color:#1F1D1A">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="font:400 12px/1 'Source Serif 4',serif;color:#a09a8c;text-decoration:line-through">{{ p.was }}원</span></sc-if>
+</div>
+<sc-if value="{{ p.avail }}" hint-placeholder-val="{{ true }}">
+<button style="margin-top:4px;padding:13px 0;background:transparent;border:1px solid #C9C2B4;color:#1F1D1A;font:400 12px/1 'Noto Sans KR',sans-serif;letter-spacing:.04em;cursor:pointer" style-hover="background:#1F1D1A;border-color:#1F1D1A;color:#F6F3EE">장바구니 담기</button>
+</sc-if>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}">
+<button style="margin-top:4px;padding:13px 0;background:transparent;border:1px dashed #C9C2B4;color:#8c8578;font:400 12px/1 'Noto Sans KR',sans-serif;letter-spacing:.04em;cursor:pointer" style-hover="border-color:#3E462C;color:#3E462C">재입고 알림 요청</button>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:110px 96px 0;background:#F6F3EE">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:44px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#a09a8c">Most requested</span>
+<h2 style="margin:0;font:400 28px/1.3 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.01em;color:#1F1D1A">인기 상품</h2>
+</div>
+<a href="#1a" style="font:400 12px/1 'Noto Sans KR',sans-serif;border-bottom:1px solid #C9C2B4;padding-bottom:3px">전체 보기</a>
+</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:26px">
+<sc-for list="{{ pop }}" as="p" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="position:relative;aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#E6E1D6 0 6px,#EFEBE3 6px 12px);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 16px">
+<span style="position:absolute;top:14px;left:14px;font:500 9px/1 Archivo,sans-serif;letter-spacing:.14em;color:#3E462C">{{ p.rank }}</span>
+<span style="font:400 9.5px/1.6 ui-monospace,Menlo,monospace;letter-spacing:.06em;color:#9a9284">{{ p.ph }}</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font:400 15px/1.4 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ p.ko }}</span>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}"><span style="font:500 9px/1 Archivo,sans-serif;letter-spacing:.14em;color:#a09a8c">SOLD OUT</span></sc-if>
+</div>
+<span style="font:400 10.5px/1 Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#a09a8c">{{ p.en }}</span>
+</div>
+<div style="display:flex;align-items:baseline;gap:9px">
+<span style="font:400 15px/1 'Source Serif 4',serif;color:#1F1D1A">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="font:400 12px/1 'Source Serif 4',serif;color:#a09a8c;text-decoration:line-through">{{ p.was }}원</span></sc-if>
+</div>
+<sc-if value="{{ p.avail }}" hint-placeholder-val="{{ true }}">
+<button style="margin-top:4px;padding:13px 0;background:transparent;border:1px solid #C9C2B4;color:#1F1D1A;font:400 12px/1 'Noto Sans KR',sans-serif;letter-spacing:.04em;cursor:pointer" style-hover="background:#1F1D1A;border-color:#1F1D1A;color:#F6F3EE">장바구니 담기</button>
+</sc-if>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}">
+<button style="margin-top:4px;padding:13px 0;background:transparent;border:1px dashed #C9C2B4;color:#8c8578;font:400 12px/1 'Noto Sans KR',sans-serif;letter-spacing:.04em;cursor:pointer" style-hover="border-color:#3E462C;color:#3E462C">재입고 알림 요청</button>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:110px 96px 0;background:#F6F3EE">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:44px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#a09a8c">Just arrived</span>
+<h2 style="margin:0;font:400 28px/1.3 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.01em;color:#1F1D1A">최신 상품</h2>
+</div>
+<a href="#1a" style="font:400 12px/1 'Noto Sans KR',sans-serif;border-bottom:1px solid #C9C2B4;padding-bottom:3px">전체 보기</a>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
+<sc-for list="{{ fresh }}" as="p" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#E6E1D6 0 6px,#EFEBE3 6px 12px);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 16px">
+<span style="font:400 9.5px/1.6 ui-monospace,Menlo,monospace;letter-spacing:.06em;color:#9a9284">{{ p.ph }}</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:5px">
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font:400 15px/1.4 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ p.ko }}</span>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}"><span style="font:500 9px/1 Archivo,sans-serif;letter-spacing:.14em;color:#a09a8c">SOLD OUT</span></sc-if>
+</div>
+<span style="font:400 10.5px/1 Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#a09a8c">{{ p.en }}</span>
+</div>
+<div style="display:flex;align-items:baseline;gap:9px">
+<span style="font:400 15px/1 'Source Serif 4',serif;color:#1F1D1A">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="font:400 12px/1 'Source Serif 4',serif;color:#a09a8c;text-decoration:line-through">{{ p.was }}원</span></sc-if>
+</div>
+<sc-if value="{{ p.avail }}" hint-placeholder-val="{{ true }}">
+<button style="margin-top:4px;padding:13px 0;background:transparent;border:1px solid #C9C2B4;color:#1F1D1A;font:400 12px/1 'Noto Sans KR',sans-serif;letter-spacing:.04em;cursor:pointer" style-hover="background:#1F1D1A;border-color:#1F1D1A;color:#F6F3EE">장바구니 담기</button>
+</sc-if>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}">
+<button style="margin-top:4px;padding:13px 0;background:transparent;border:1px dashed #C9C2B4;color:#8c8578;font:400 12px/1 'Noto Sans KR',sans-serif;letter-spacing:.04em;cursor:pointer" style-hover="border-color:#3E462C;color:#3E462C">재입고 알림 요청</button>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:110px 96px 0;background:#F6F3EE">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding-bottom:44px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#a09a8c">Categories</span>
+<h2 style="margin:0;font:400 28px/1.3 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">카테고리</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
+<sc-for list="{{ cats }}" as="c" hint-placeholder-count="4">
+<a href="#1a" style="display:flex;flex-direction:column;gap:14px">
+<div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#E6E1D6 0 6px,#EFEBE3 6px 12px);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 20px">
+<span style="font:400 9.5px/1.6 ui-monospace,Menlo,monospace;letter-spacing:.06em;color:#9a9284">{{ c.ph }}</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center">
+<span style="font:400 17px/1.3 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ c.label }}</span>
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#a09a8c">{{ c.en }}</span>
+<span style="font:300 12.5px/1.7 'Noto Serif KR',serif;color:#7d766a;max-width:22em">{{ c.sub }}</span>
+</div>
+</a>
+</sc-for>
+</div>
+</div>
+
+<div style="margin: 110px 96px 0; padding: 74px 80px; display: flex; align-items: center; justify-content: space-between; gap: 60px; background-color: #5F6A46">
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:rgba(246,243,238,.55)">For business</span>
+<h3 style="margin:0;font:400 30px/1.4 Archivo,'Noto Sans KR',sans-serif;color:#F6F3EE">대량구매 · 도매 견적 문의</h3>
+<p style="margin:0;max-width:40em;font:300 15px/1.9 'Source Serif 4','Noto Serif KR',serif;color:rgba(246,243,238,.72)">10개 이상 동일 상품, 사업자 납품, 기업 선물 건은 별도 단가로 안내드립니다. 요청서를 남기시면 담당자가 확인 후 연락드립니다.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;flex:none">
+<a href="#1a" style="padding:15px 34px;background:#F6F3EE;color:#1F1D1A;font:400 13px/1 'Noto Sans KR',sans-serif;letter-spacing:.06em;text-align:center" style-hover="background:#fff">견적 문의하기</a>
+<a href="#1a" style="padding:15px 34px;border:1px solid rgba(246,243,238,.4);color:#F6F3EE;font:400 13px/1 'Noto Sans KR',sans-serif;letter-spacing:.06em;text-align:center" style-hover="border-color:#F6F3EE">카카오톡 상담</a>
+</div>
+</div>
+
+<div style="padding:110px 96px 0;background:#F6F3EE">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding-bottom:56px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#a09a8c">How it works</span>
+<h2 style="margin:0;font:400 28px/1.3 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">스토어 이용 방법</h2>
+<p style="margin:6px 0 0;font:300 15px/1.8 'Source Serif 4','Noto Serif KR',serif;color:#55514a">온라인 결제 단계가 없습니다. 요청과 확인, 두 번의 대화로 끝납니다.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:14px;padding-top:22px;border-top:1px solid #DED7C9">
+<span style="font:500 11px/1 Archivo,sans-serif;letter-spacing:.16em;color:#3E462C">{{ s.no }}</span>
+<span style="font:400 18px/1.4 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ s.ko }}</span>
+<span style="font:300 13.5px/1.9 'Noto Serif KR',serif;color:#6b665b">{{ s.desc }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:96px 96px 0;background:#F6F3EE">
+<div style="display:flex;align-items:baseline;gap:12px;padding-bottom:26px">
+<h3 style="margin:0;font:400 15px/1 'Noto Sans KR',sans-serif;color:#1F1D1A">최근 본 상품</h3>
+<span style="font:400 9.5px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#a09a8c">Recently viewed</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:20px">
+<sc-for list="{{ recent }}" as="r" hint-placeholder-count="6">
+<a href="#1a" style="display:flex;flex-direction:column;gap:9px">
+<div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#E6E1D6 0 5px,#EFEBE3 5px 10px)"></div>
+<span style="font:400 12px/1.4 'Noto Sans KR',sans-serif;color:#55514a">{{ r.ko }}</span>
+</a>
+</sc-for>
+</div>
+</div>
+
+<div style="margin-top:110px;padding:72px 96px 40px;background:#EDE8E0;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font:500 14px/1 Archivo,sans-serif;letter-spacing:.28em;color:#1F1D1A">STORE NUMBER ONE</span>
+<span style="font:300 12.5px/1.9 'Noto Serif KR',serif;color:#6b665b;max-width:24em">오래 쓸 물건을 골라 두는 편집 스토어. 결제 없이 주문을 요청하고, 담당자와 확인 후 받습니다.</span>
+<div style="display:flex;gap:14px;padding-top:6px;font:400 11px/1 Archivo,sans-serif;letter-spacing:.1em;color:#8c8578">
+<a href="#1a">INSTAGRAM</a><a href="#1a">KAKAO</a><a href="#1a">NAVER</a>
+</div>
+</div>
+<sc-for list="{{ foot }}" as="f" hint-placeholder-count="3">
+<div style="display:flex;flex-direction:column;gap:12px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#a09a8c">{{ f.en }}</span>
+<span style="font:400 13px/1 'Noto Sans KR',sans-serif;color:#1F1D1A;padding-bottom:2px">{{ f.ko }}</span>
+<sc-for list="{{ f.items }}" as="it" hint-placeholder-count="4">
+<a href="#1a" style="font:300 12.5px/1.9 'Noto Serif KR',serif;color:#6b665b">{{ it }}</a>
+</sc-for>
+</div>
+</sc-for>
+</div>
+<div style="padding:22px 96px 34px;background:#EDE8E0;border-top:1px solid #DED7C9;display:flex;justify-content:space-between;font:400 11px/1.8 Archivo,'Noto Sans KR',sans-serif;color:#8c8578">
+<span>스토어 넘버원 · 사업자등록번호 000-00-00000 · 서울시 성동구 000로 00 · 대표 000</span>
+<span>© 2026 Store Number One</span>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="1b"><div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>편집숍 — 리넨 배경, 3열 대형 카드, 인덱스 리듬</div>
+<div class="dv-card" style="width:1440px;background:#EDE8E0">
+
+<div style="display:flex;align-items:center;justify-content:space-between;padding:0 72px;height:36px;background:#1F1D1A;font:400 11px/1 Archivo,'Noto Sans KR',sans-serif;color:rgba(246,243,238,.7);letter-spacing:.04em">
+<span style="letter-spacing:.16em;text-transform:uppercase">No checkout · request &amp; we call you</span>
+<span>결제 없음 · 주문 요청 후 담당자가 직접 연락드립니다</span>
+<span style="display:flex;gap:16px"><a href="#1b" style="color:rgba(246,243,238,.7)">카카오톡</a><a href="#1b" style="color:rgba(246,243,238,.7)">02-1000-0001</a></span>
+</div>
+
+<div style="display:flex;align-items:flex-end;justify-content:space-between;padding:30px 72px 20px;border-bottom:1px solid #DED7C9">
+<div style="display:flex;flex-direction:column;gap:6px">
+<span style="font:600 26px/1 Archivo,sans-serif;letter-spacing:-.01em;color:#1F1D1A">STORE Nº1</span>
+<span style="font:400 11px/1 'Noto Sans KR',sans-serif;letter-spacing:.2em;color:#8c8578">스토어 넘버원 · STORE NUMBER ONE</span>
+</div>
+<div style="display:flex;gap:24px;align-items:flex-end">
+<div style="display:flex;align-items:center;gap:10px;border-bottom:1px solid #C9C2B4;padding:0 6px 7px;min-width:230px">
+<span style="width:11px;height:11px;border:1.2px solid #8c8578;border-radius:50%"></span>
+<span style="font:300 13px/1 'Noto Serif KR',serif;color:#a09a8c">상품 · 브랜드 검색</span>
+</div>
+<a href="#1b" style="padding:11px 18px;background:#1F1D1A;color:#EDE8E0;font:400 12px/1 'Noto Sans KR',sans-serif" style-hover="background:#3E462C">Google로 계속하기</a>
+<a href="#1b" style="padding:11px 18px;border:1px solid #1F1D1A;font:400 12px/1 'Noto Sans KR',sans-serif;color:#1F1D1A">장바구니 (2)</a>
+</div>
+</div>
+<div style="display:flex;gap:0;padding:0 72px;border-bottom:1px solid #DED7C9;position:relative">
+<sc-for list="{{ navB }}" as="n" hint-placeholder-count="4">
+<div style="position:relative" onMouseEnter="{{ n.onEnter }}" onMouseLeave="{{ n.onLeave }}">
+<div style="display:flex;align-items:baseline;gap:8px;padding:15px 26px 15px 0;cursor:pointer">
+<span style="font:500 9px/1 Archivo,sans-serif;letter-spacing:.1em;color:#3E462C">{{ n.no }}</span>
+<span style="font:400 14px/1 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ n.label }}</span>
+<span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#a09a8c">{{ n.en }}</span>
+</div>
+<sc-if value="{{ n.open }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;top:100%;left:0;min-width:200px;background:#F6F3EE;border:1px solid #DED7C9;border-top:none;padding:12px 0;display:flex;flex-direction:column;z-index:20">
+<sc-for list="{{ n.items }}" as="it" hint-placeholder-count="5">
+<a href="#1b" style="padding:8px 20px;font:300 13px/1.2 'Noto Serif KR',serif;color:#3a372f;white-space:nowrap" style-hover="background:#EDE8E0">{{ it }}</a>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1.15fr;gap:0;align-items:stretch;border-bottom:1px solid #DED7C9">
+<div style="padding:96px 64px 96px 72px;display:flex;flex-direction:column;gap:26px;justify-content:center">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.26em;text-transform:uppercase;color:#3E462C">Issue 01 — Long-lasting things</span>
+<h1 style="margin:0;font:400 54px/1.16 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.02em;color:#1F1D1A;text-wrap:pretty">좋은 물건은<br>재촉하지 않습니다</h1>
+<p style="margin:0;max-width:30em;font:300 16px/1.95 'Source Serif 4','Noto Serif KR',serif;color:#55514a;text-wrap:pretty">뷰티 · 의류 · 식품 · 생활 도구 네 갈래에서, 오래 두고 쓸 만한 것만 골라 소개합니다. 결제창은 없습니다. 장바구니에 담아 <b style="font-weight:500;color:#1F1D1A">주문 요청</b>을 보내면 담당자가 재고를 확인해 연락드립니다.</p>
+<div style="display:flex;gap:10px;padding-top:8px">
+<a href="#1b" style="padding:15px 30px;background:#3E462C;color:#F6F3EE;font:400 13px/1 'Noto Sans KR',sans-serif;letter-spacing:.05em" style-hover="background:#1F1D1A">이번 주 셀렉션</a>
+<a href="#1b" style="padding:15px 30px;border:1px solid #1F1D1A;color:#1F1D1A;font:400 13px/1 'Noto Sans KR',sans-serif;letter-spacing:.05em">요청 방법 3단계</a>
+</div>
+<div style="display:flex;gap:30px;padding-top:22px;border-top:1px solid #DED7C9;margin-top:12px">
+<span style="font:300 12px/1.7 'Noto Serif KR',serif;color:#7d766a">취급 상품 <b style="font-weight:500;color:#1F1D1A">412</b>점</span>
+<span style="font:300 12px/1.7 'Noto Serif KR',serif;color:#7d766a">평균 연락 <b style="font-weight:500;color:#1F1D1A">4시간</b> 이내</span>
+<span style="font:300 12px/1.7 'Noto Serif KR',serif;color:#7d766a">해외 배송 <b style="font-weight:500;color:#1F1D1A">가능</b></span>
+</div>
+</div>
+<div style="background:repeating-linear-gradient(135deg,#E1DACC 0 8px,#E9E4DA 8px 16px);min-height:560px;display:flex;align-items:flex-end;padding:34px">
+<span style="font:400 10px/1.6 ui-monospace,Menlo,monospace;letter-spacing:.08em;color:#948c7e">hero image — 리넨 천 위 정물, 상품 4점 그룹, 그림자 길게</span>
+</div>
+</div>
+
+<div style="display:flex;align-items:center;gap:16px;padding:16px 72px;background:#E3DDD1;font:400 12px/1 'Noto Sans KR',sans-serif;color:#55514a;border-bottom:1px solid #DED7C9">
+<span style="font:500 9.5px/1 Archivo,sans-serif;letter-spacing:.18em;color:#3E462C">공지 NOTICE</span>
+<span>8/12–8/14 여름 휴무 · 이 기간 주문 요청은 8/17부터 순차 연락드립니다.</span>
+</div>
+
+<div style="padding:96px 72px 0">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:38px;border-bottom:1px solid #1F1D1A">
+<div style="display:flex;align-items:baseline;gap:16px">
+<span style="font:500 11px/1 Archivo,sans-serif;letter-spacing:.14em;color:#3E462C">01</span>
+<h2 style="margin:0;font:400 30px/1.2 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.01em;color:#1F1D1A">추천 상품</h2>
+<span style="font:300 13px/1 'Noto Serif KR',serif;color:#8c8578">에디터가 이번 주에 고른 것</span>
+</div>
+<a href="#1b" style="font:400 12px/1 'Noto Sans KR',sans-serif">전체 보기 →</a>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:36px;padding-top:44px">
+<sc-for list="{{ feat3 }}" as="p" hint-placeholder-count="3">
+<div style="display:flex;flex-direction:column;background:#F6F3EE;border:1px solid #DED7C9">
+<div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#E1DACC 0 7px,#EAE5DB 7px 14px);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 24px">
+<span style="font:400 10px/1.7 ui-monospace,Menlo,monospace;letter-spacing:.06em;color:#948c7e">{{ p.ph }}</span>
+</div>
+<div style="padding:24px 26px 26px;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;flex-direction:column;gap:6px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#3E462C">{{ p.cat }}</span>
+<div style="display:flex;align-items:baseline;gap:9px">
+<span style="font:400 19px/1.35 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ p.ko }}</span>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}"><span style="font:500 9px/1 Archivo,sans-serif;letter-spacing:.14em;color:#a09a8c">SOLD OUT</span></sc-if>
+</div>
+<span style="font:400 11px/1 Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#a09a8c">{{ p.en }}</span>
+</div>
+<span style="font:300 13px/1.85 'Noto Serif KR',serif;color:#6b665b">{{ p.note }}</span>
+<div style="display:flex;align-items:flex-end;justify-content:space-between;padding-top:6px;border-top:1px solid #DED7C9">
+<div style="display:flex;flex-direction:column;gap:3px;padding-top:14px">
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="font:400 12px/1 'Source Serif 4',serif;color:#a09a8c;text-decoration:line-through">{{ p.was }}원</span></sc-if>
+<span style="font:400 18px/1 'Source Serif 4',serif;color:#1F1D1A">{{ p.price }}원</span>
+</div>
+<sc-if value="{{ p.avail }}" hint-placeholder-val="{{ true }}">
+<button style="padding:13px 22px;background:#1F1D1A;border:none;color:#F6F3EE;font:400 12px/1 'Noto Sans KR',sans-serif;cursor:pointer" style-hover="background:#3E462C">장바구니 담기</button>
+</sc-if>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}">
+<button style="padding:13px 22px;background:transparent;border:1px dashed #C9C2B4;color:#8c8578;font:400 12px/1 'Noto Sans KR',sans-serif;cursor:pointer" style-hover="border-color:#3E462C;color:#3E462C">재입고 알림</button>
+</sc-if>
+</div>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:96px 72px 0">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:38px;border-bottom:1px solid #1F1D1A">
+<div style="display:flex;align-items:baseline;gap:16px">
+<span style="font:500 11px/1 Archivo,sans-serif;letter-spacing:.14em;color:#3E462C">02</span>
+<h2 style="margin:0;font:400 30px/1.2 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.01em;color:#1F1D1A">인기 상품</h2>
+<span style="font:300 13px/1 'Noto Serif KR',serif;color:#8c8578">요청이 가장 많은 순</span>
+</div>
+<a href="#1b" style="font:400 12px/1 'Noto Sans KR',sans-serif">전체 보기 →</a>
+</div>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ pop }}" as="p" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:64px 132px 1fr 190px 170px;align-items:center;gap:28px;padding:20px 0;border-bottom:1px solid #DED7C9">
+<span style="font:400 22px/1 Archivo,sans-serif;color:#C9C2B4">{{ p.rank }}</span>
+<div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#E1DACC 0 6px,#EAE5DB 6px 12px)"></div>
+<div style="display:flex;flex-direction:column;gap:7px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#3E462C">{{ p.cat }}</span>
+<div style="display:flex;align-items:baseline;gap:9px">
+<span style="font:400 19px/1.3 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ p.ko }}</span>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}"><span style="font:500 9px/1 Archivo,sans-serif;letter-spacing:.14em;color:#a09a8c">SOLD OUT</span></sc-if>
+</div>
+<span style="font:400 11px/1 Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#a09a8c">{{ p.en }}</span>
+</div>
+<div style="display:flex;align-items:baseline;gap:10px">
+<span style="font:400 18px/1 'Source Serif 4',serif;color:#1F1D1A">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="font:400 12px/1 'Source Serif 4',serif;color:#a09a8c;text-decoration:line-through">{{ p.was }}원</span></sc-if>
+</div>
+<sc-if value="{{ p.avail }}" hint-placeholder-val="{{ true }}">
+<button style="padding:14px 0;background:transparent;border:1px solid #1F1D1A;color:#1F1D1A;font:400 12px/1 'Noto Sans KR',sans-serif;cursor:pointer" style-hover="background:#1F1D1A;color:#F6F3EE">장바구니 담기</button>
+</sc-if>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}">
+<button style="padding:14px 0;background:transparent;border:1px dashed #C9C2B4;color:#8c8578;font:400 12px/1 'Noto Sans KR',sans-serif;cursor:pointer" style-hover="border-color:#3E462C;color:#3E462C">재입고 알림 요청</button>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:96px 72px 0">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:38px;border-bottom:1px solid #1F1D1A">
+<div style="display:flex;align-items:baseline;gap:16px">
+<span style="font:500 11px/1 Archivo,sans-serif;letter-spacing:.14em;color:#3E462C">03</span>
+<h2 style="margin:0;font:400 30px/1.2 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.01em;color:#1F1D1A">최신 상품</h2>
+<span style="font:300 13px/1 'Noto Serif KR',serif;color:#8c8578">이번 주 입고</span>
+</div>
+<a href="#1b" style="font:400 12px/1 'Noto Sans KR',sans-serif">전체 보기 →</a>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding-top:44px">
+<sc-for list="{{ fresh }}" as="p" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:15px">
+<div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#E1DACC 0 6px,#EAE5DB 6px 12px);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 18px">
+<span style="font:400 9.5px/1.6 ui-monospace,Menlo,monospace;letter-spacing:.06em;color:#948c7e">{{ p.ph }}</span>
+</div>
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font:400 15px/1.4 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ p.ko }}</span>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}"><span style="font:500 9px/1 Archivo,sans-serif;letter-spacing:.14em;color:#a09a8c">SOLD OUT</span></sc-if>
+</div>
+<div style="display:flex;align-items:baseline;gap:9px">
+<span style="font:400 15px/1 'Source Serif 4',serif;color:#1F1D1A">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="font:400 12px/1 'Source Serif 4',serif;color:#a09a8c;text-decoration:line-through">{{ p.was }}원</span></sc-if>
+</div>
+<sc-if value="{{ p.avail }}" hint-placeholder-val="{{ true }}">
+<button style="padding:12px 0;background:transparent;border:1px solid #C9C2B4;color:#1F1D1A;font:400 12px/1 'Noto Sans KR',sans-serif;cursor:pointer" style-hover="background:#1F1D1A;border-color:#1F1D1A;color:#F6F3EE">장바구니 담기</button>
+</sc-if>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}">
+<button style="padding:12px 0;background:transparent;border:1px dashed #C9C2B4;color:#8c8578;font:400 12px/1 'Noto Sans KR',sans-serif;cursor:pointer">재입고 알림 요청</button>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:96px 72px 0">
+<div style="display:flex;align-items:baseline;gap:16px;padding-bottom:38px;border-bottom:1px solid #1F1D1A">
+<span style="font:500 11px/1 Archivo,sans-serif;letter-spacing:.14em;color:#3E462C">04</span>
+<h2 style="margin:0;font:400 30px/1.2 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">카테고리</h2>
+<span style="font:300 13px/1 'Noto Serif KR',serif;color:#8c8578">대분류 4 · 하위 22</span>
+</div>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ cats }}" as="c" hint-placeholder-count="4">
+<div style="display:grid;grid-template-columns:80px 1fr 1.3fr 200px;align-items:center;gap:32px;padding:28px 0;border-bottom:1px solid #DED7C9">
+<span style="font:400 12px/1 Archivo,sans-serif;letter-spacing:.14em;color:#3E462C">{{ c.no }}</span>
+<div style="display:flex;flex-direction:column;gap:6px">
+<span style="font:400 26px/1.2 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">{{ c.label }}</span>
+<span style="font:400 10.5px/1 Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#a09a8c">{{ c.en }}</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<sc-for list="{{ c.items }}" as="it" hint-placeholder-count="6">
+<a href="#1b" style="padding:7px 13px;border:1px solid #DED7C9;background:#F6F3EE;font:300 12px/1 'Noto Serif KR',serif;color:#55514a" style-hover="border-color:#1F1D1A;color:#1F1D1A">{{ it }}</a>
+</sc-for>
+</div>
+<div style="aspect-ratio:16/9;background:repeating-linear-gradient(135deg,#E1DACC 0 6px,#EAE5DB 6px 12px);display:flex;align-items:center;justify-content:center">
+<span style="font:400 9px/1 ui-monospace,Menlo,monospace;color:#948c7e">{{ c.ph }}</span>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="margin:96px 72px 0;display:grid;grid-template-columns:1fr 1fr">
+<div style="padding: 64px 56px; display: flex; flex-direction: column; gap: 16px; background-color: #BC9761">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:rgba(246,243,238,.55)">Wholesale</span>
+<h3 style="margin:0;font:400 26px/1.4 Archivo,'Noto Sans KR',sans-serif;color:#F6F3EE">대량구매 · 견적 문의</h3>
+<p style="margin:0;font:300 14px/1.9 'Source Serif 4','Noto Serif KR',serif;color:rgba(246,243,238,.72)">사업자 납품, 기업 선물, 10개 이상 동일 상품은 별도 단가로 안내합니다.</p>
+<a href="#1b" style="margin-top:8px;align-self:flex-start;padding:13px 26px;background:#F6F3EE;color:#1F1D1A;font:400 12px/1 'Noto Sans KR',sans-serif">견적 요청서 작성</a>
+</div>
+<div style="padding: 64px 56px; display: flex; flex-direction: column; gap: 16px; background-color: #BC9761">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:rgba(246,243,238,.5)">Talk to us</span>
+<h3 style="margin:0;font:400 26px/1.4 Archivo,'Noto Sans KR',sans-serif;color:#F6F3EE">카카오톡 · 전화 상담</h3>
+<p style="margin:0;font:300 14px/1.9 'Source Serif 4','Noto Serif KR',serif;color:rgba(246,243,238,.66)">평일 10:00–18:00 · 재고, 사이즈, 해외 배송 문의를 바로 답해 드립니다.</p>
+<div style="display:flex;gap:10px;margin-top:8px">
+<a href="#1b" style="padding:13px 24px;border:1px solid rgba(246,243,238,.4);color:#F6F3EE;font:400 12px/1 'Noto Sans KR',sans-serif">카카오톡 상담</a>
+<a href="#1b" style="padding:13px 24px;border:1px solid rgba(246,243,238,.4);color:#F6F3EE;font:400 12px/1 'Noto Sans KR',sans-serif">02-1000-0001</a>
+</div>
+</div>
+</div>
+
+<div style="padding:96px 72px 0">
+<div style="display:flex;align-items:baseline;gap:16px;padding-bottom:38px;border-bottom:1px solid #1F1D1A">
+<span style="font:500 11px/1 Archivo,sans-serif;letter-spacing:.14em;color:#3E462C">05</span>
+<h2 style="margin:0;font:400 30px/1.2 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">스토어 이용 방법</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding-top:0">
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:14px;padding:36px 30px 40px 0;border-right:1px solid #DED7C9">
+<span style="font:400 34px/1 Archivo,sans-serif;color:#C9C2B4">{{ s.no }}</span>
+<span style="font:400 19px/1.4 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ s.ko }}</span>
+<span style="font:300 13.5px/1.9 'Noto Serif KR',serif;color:#6b665b">{{ s.desc }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:80px 72px 0">
+<div style="display:flex;align-items:baseline;gap:12px;padding-bottom:22px">
+<h3 style="margin:0;font:400 15px/1 'Noto Sans KR',sans-serif;color:#1F1D1A">최근 본 상품</h3>
+<span style="font:400 9.5px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#a09a8c">Recently viewed</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:18px">
+<sc-for list="{{ recent }}" as="r" hint-placeholder-count="6">
+<a href="#1b" style="display:flex;gap:11px;align-items:center;padding:11px;background:#F6F3EE;border:1px solid #DED7C9">
+<span style="width:42px;height:42px;flex:none;background:repeating-linear-gradient(135deg,#E1DACC 0 5px,#EAE5DB 5px 10px)"></span>
+<span style="font:400 11.5px/1.4 'Noto Sans KR',sans-serif;color:#55514a">{{ r.ko }}</span>
+</a>
+</sc-for>
+</div>
+</div>
+
+<div style="margin-top: 96px; padding: 64px 72px 36px; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 44px; background-color: #B6996C">
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font:600 22px/1 Archivo,sans-serif;color:#F6F3EE">STORE Nº1</span>
+<span style="font: 300 12.5px/1.9 'Noto Serif KR',serif; color: #FFFFFF99; max-width: 24em">오래 쓸 물건을 골라 두는 편집 스토어. 결제 없이 요청하고, 담당자와 확인 후 받습니다.</span>
+<div style="display:flex;gap:14px;padding-top:6px;font:400 11px/1 Archivo,sans-serif;letter-spacing:.1em">
+<a href="#1b" style="color:rgba(246,243,238,.6)">INSTAGRAM</a><a href="#1b" style="color:rgba(246,243,238,.6)">KAKAO</a><a href="#1b" style="color:rgba(246,243,238,.6)">NAVER</a>
+</div>
+</div>
+<sc-for list="{{ foot }}" as="f" hint-placeholder-count="3">
+<div style="display:flex;flex-direction:column;gap:12px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,243,238,.4)">{{ f.en }}</span>
+<span style="font:400 13px/1 'Noto Sans KR',sans-serif;color:#F6F3EE">{{ f.ko }}</span>
+<sc-for list="{{ f.items }}" as="it" hint-placeholder-count="4">
+<a href="#1b" style="font:300 12.5px/1.9 'Noto Serif KR',serif;color:rgba(246,243,238,.6)">{{ it }}</a>
+</sc-for>
+</div>
+</sc-for>
+</div>
+<div style="padding: 20px 72px 30px; border-top: 1px solid rgba(246,243,238,.14); display: flex; justify-content: space-between; font: 400 11px/1.8 Archivo,'Noto Sans KR',sans-serif; color: rgba(246,243,238,.45); background-color: #7A674B">
+<span>스토어 넘버원 · 사업자등록번호 000-00-00000 · 서울시 성동구 000로 00</span>
+<span>© 2026 Store Number One</span>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="1c"><div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>갤러리 — 풀블리드 Hero, 미술관 캡션식 정보</div>
+<div class="dv-card" style="width:1440px;background:#F6F3EE">
+
+<div style="display:flex;align-items:center;justify-content:center;gap:12px;padding:0 88px;height:32px;background:#3E462C;font:400 11px/1 Archivo,'Noto Sans KR',sans-serif;color:rgba(246,243,238,.8);letter-spacing:.1em">
+<span>결제창 없음</span><span style="opacity:.4">/</span><span>장바구니 → 주문 요청 → 담당자 연락</span><span style="opacity:.4">/</span><span>평일 4시간 내 회신</span>
+</div>
+
+<div style="position:relative;background:#26291D;min-height:720px;display:flex;flex-direction:column">
+<div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:26px 88px;position:relative;z-index:10">
+<div style="display:flex;gap:28px;align-items:center">
+<sc-for list="{{ navC }}" as="n" hint-placeholder-count="4">
+<div style="position:relative;padding:8px 0" onMouseEnter="{{ n.onEnter }}" onMouseLeave="{{ n.onLeave }}">
+<span style="font:400 13px/1 'Noto Sans KR',sans-serif;color:#EDE8E0;cursor:pointer;letter-spacing:.02em">{{ n.label }}</span>
+<sc-if value="{{ n.open }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;top:36px;left:-16px;min-width:190px;background:rgba(38,41,29,.97);border:1px solid rgba(237,232,224,.18);padding:12px 0;display:flex;flex-direction:column;z-index:30">
+<sc-for list="{{ n.items }}" as="it" hint-placeholder-count="5">
+<a href="#1c" style="padding:8px 20px;font:300 13px/1.2 'Noto Serif KR',serif;color:rgba(237,232,224,.8);white-space:nowrap" style-hover="background:rgba(237,232,224,.1);color:#fff">{{ it }}</a>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:5px">
+<span style="font:500 15px/1 Archivo,sans-serif;letter-spacing:.34em;color:#F6F3EE">STORE NUMBER ONE</span>
+<span style="font:300 10px/1 'Noto Sans KR',sans-serif;letter-spacing:.28em;color:rgba(246,243,238,.55)">스토어 넘버원</span>
+</div>
+<div style="display:flex;gap:20px;align-items:center;justify-content:flex-end;font:400 12px/1 'Noto Sans KR',sans-serif">
+<a href="#1c" style="color:rgba(246,243,238,.8);display:flex;align-items:center;gap:7px"><span style="width:11px;height:11px;border:1.2px solid rgba(246,243,238,.6);border-radius:50%"></span>검색</a>
+<a href="#1c" style="padding:9px 15px;border:1px solid rgba(246,243,238,.45);color:#F6F3EE">Google로 계속하기</a>
+<a href="#1c" style="color:rgba(246,243,238,.8)">장바구니 (2)</a>
+</div>
+</div>
+<div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,#2C3022 0 9px,#31351F 9px 18px)"></div>
+<div style="position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:26px;padding:70px 88px 90px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:rgba(246,243,238,.6)">Vol. 01 — Objects for a long while</span>
+<h1 style="margin:0;font:400 66px/1.12 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.025em;color:#F6F3EE;max-width:16em;text-wrap:pretty">첫 좋은 물건을<br>고르는 자리</h1>
+<p style="margin:0;max-width:32em;font:300 16px/1.95 'Source Serif 4','Noto Serif KR',serif;color:rgba(246,243,238,.72);text-wrap:pretty">스토어 넘버원에는 결제창이 없습니다. Google 로그인 후 장바구니에 담고 주문 요청을 보내면, 담당자가 재고와 배송을 확인해 직접 연락드립니다.</p>
+<div style="display:flex;gap:12px;padding-top:6px">
+<a href="#1c" style="padding:16px 34px;background:#F6F3EE;color:#1F1D1A;font:400 13px/1 'Noto Sans KR',sans-serif;letter-spacing:.05em" style-hover="background:#fff">셀렉션 둘러보기</a>
+<a href="#1c" style="padding:16px 34px;border:1px solid rgba(246,243,238,.45);color:#F6F3EE;font:400 13px/1 'Noto Sans KR',sans-serif;letter-spacing:.05em" style-hover="border-color:#F6F3EE">주문 요청이 뭔가요?</a>
+</div>
+<span style="position:absolute;bottom:26px;left:88px;font:400 10px/1.6 ui-monospace,Menlo,monospace;letter-spacing:.08em;color:rgba(246,243,238,.4)">hero image — 어두운 배경 위 상품 단독 정물, 측광</span>
+</div>
+</div>
+
+<div style="display:flex;align-items:center;justify-content:center;gap:14px;padding:16px 88px;background:#EDE8E0;font:400 12px/1 'Noto Sans KR',sans-serif;color:#55514a">
+<span style="font:500 9.5px/1 Archivo,sans-serif;letter-spacing:.18em;color:#3E462C">NOTICE</span>
+<span>8/12–8/14 여름 휴무 · 주문 요청 확인이 지연될 수 있습니다.</span>
+</div>
+
+<div style="padding:120px 88px 0;display:flex;flex-direction:column;align-items:center;gap:10px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#a09a8c">Room 01 — Selected</span>
+<h2 style="margin:0;font:400 34px/1.3 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.015em;color:#1F1D1A">추천 상품</h2>
+<p style="margin:4px 0 0;font:300 14px/1.8 'Source Serif 4','Noto Serif KR',serif;color:#6b665b">한 점씩 떨어뜨려 놓았습니다. 이미지를 먼저 보세요.</p>
+</div>
+<div style="padding:56px 88px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:44px">
+<sc-for list="{{ feat3 }}" as="p" hint-placeholder-count="3">
+<div style="display:flex;flex-direction:column;gap:0">
+<div style="background:#EDE8E0;padding:46px;display:flex;align-items:center;justify-content:center">
+<div style="width:100%;aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#E1DACC 0 7px,#EAE5DB 7px 14px);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 20px">
+<span style="font:400 10px/1.7 ui-monospace,Menlo,monospace;letter-spacing:.06em;color:#948c7e">{{ p.ph }}</span>
+</div>
+</div>
+<div style="padding:24px 4px 0;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:baseline;gap:9px">
+<span style="font:400 17px/1.4 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ p.ko }}</span>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}"><span style="font:500 9px/1 Archivo,sans-serif;letter-spacing:.14em;color:#a09a8c">SOLD OUT</span></sc-if>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px;font:400 10.5px/1.7 ui-monospace,Menlo,monospace;letter-spacing:.04em;color:#8c8578">
+<span>{{ p.en }}</span>
+<span>{{ p.cat }} · {{ p.spec }}</span>
+</div>
+<div style="display:flex;align-items:baseline;gap:9px;padding-top:2px">
+<span style="font:400 16px/1 'Source Serif 4',serif;color:#1F1D1A">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="font:400 12px/1 'Source Serif 4',serif;color:#a09a8c;text-decoration:line-through">{{ p.was }}원</span></sc-if>
+</div>
+<sc-if value="{{ p.avail }}" hint-placeholder-val="{{ true }}">
+<button style="margin-top:8px;padding:14px 0;background:transparent;border:1px solid #1F1D1A;color:#1F1D1A;font:400 12px/1 'Noto Sans KR',sans-serif;letter-spacing:.06em;cursor:pointer" style-hover="background:#3E462C;border-color:#3E462C;color:#F6F3EE">장바구니 담기</button>
+</sc-if>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}">
+<button style="margin-top:8px;padding:14px 0;background:transparent;border:1px dashed #C9C2B4;color:#8c8578;font:400 12px/1 'Noto Sans KR',sans-serif;letter-spacing:.06em;cursor:pointer" style-hover="border-color:#3E462C;color:#3E462C">재입고 알림 요청</button>
+</sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+
+<div style="margin-top:120px;padding:0;background:#EDE8E0">
+<div style="padding:96px 88px 0;display:flex;flex-direction:column;align-items:center;gap:10px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#a09a8c">Room 02 — Most requested</span>
+<h2 style="margin:0;font:400 34px/1.3 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.015em;color:#1F1D1A">인기 상품</h2>
+</div>
+<div style="padding:52px 88px 96px;display:grid;grid-template-columns:repeat(5,1fr);gap:26px">
+<sc-for list="{{ pop }}" as="p" hint-placeholder-count="5">
+<div style="display:flex;flex-direction:column;gap:0;background:#F6F3EE">
+<div style="padding:26px 26px 0">
+<div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#E1DACC 0 6px,#EAE5DB 6px 12px);position:relative">
+<span style="position:absolute;top:10px;left:10px;font:400 10px/1 ui-monospace,Menlo,monospace;color:#8c8578">{{ p.rank }}</span>
+</div>
+</div>
+<div style="padding:18px 22px 22px;display:flex;flex-direction:column;gap:9px">
+<div style="display:flex;align-items:baseline;gap:7px">
+<span style="font:400 14px/1.4 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ p.ko }}</span>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}"><span style="font:500 8.5px/1 Archivo,sans-serif;letter-spacing:.14em;color:#a09a8c">SOLD OUT</span></sc-if>
+</div>
+<span style="font:400 10px/1.6 ui-monospace,Menlo,monospace;color:#8c8578">{{ p.en }}</span>
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font:400 14px/1 'Source Serif 4',serif;color:#1F1D1A">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="font:400 11px/1 'Source Serif 4',serif;color:#a09a8c;text-decoration:line-through">{{ p.was }}원</span></sc-if>
+</div>
+<sc-if value="{{ p.avail }}" hint-placeholder-val="{{ true }}">
+<button style="margin-top:4px;padding:11px 0;background:transparent;border:1px solid #C9C2B4;color:#1F1D1A;font:400 11.5px/1 'Noto Sans KR',sans-serif;cursor:pointer" style-hover="background:#3E462C;border-color:#3E462C;color:#F6F3EE">장바구니 담기</button>
+</sc-if>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}">
+<button style="margin-top:4px;padding:11px 0;background:transparent;border:1px dashed #C9C2B4;color:#8c8578;font:400 11.5px/1 'Noto Sans KR',sans-serif;cursor:pointer">재입고 알림</button>
+</sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:110px 88px 0;display:flex;flex-direction:column;align-items:center;gap:10px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#a09a8c">Room 03 — Just arrived</span>
+<h2 style="margin:0;font:400 34px/1.3 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.015em;color:#1F1D1A">최신 상품</h2>
+</div>
+<div style="padding:52px 88px 0;display:grid;grid-template-columns:1.6fr 1fr;gap:36px;align-items:stretch">
+<div style="background:#EDE8E0;padding:52px;display:flex;flex-direction:column;gap:26px">
+<div style="flex:1;background:repeating-linear-gradient(135deg,#E1DACC 0 8px,#EAE5DB 8px 16px);min-height:420px;display:flex;align-items:flex-end;padding:26px">
+<span style="font:400 10px/1.6 ui-monospace,Menlo,monospace;color:#948c7e">feature image — 신상 대표 1점, 여백 크게</span>
+</div>
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:30px">
+<div style="display:flex;flex-direction:column;gap:9px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#3E462C">New this week</span>
+<span style="font:400 24px/1.4 'Noto Sans KR',sans-serif;color:#1F1D1A">리넨 오버셔츠</span>
+<span style="font:400 10.5px/1.6 ui-monospace,Menlo,monospace;color:#8c8578">Linen Over Shirt · 의류 · 3 colours</span>
+<div style="display:flex;align-items:baseline;gap:9px;padding-top:2px">
+<span style="font:400 18px/1 'Source Serif 4',serif;color:#1F1D1A">48,000원</span>
+<span style="font:400 13px/1 'Source Serif 4',serif;color:#a09a8c;text-decoration:line-through">56,000원</span>
+</div>
+</div>
+<button style="padding:15px 30px;background:#1F1D1A;border:none;color:#F6F3EE;font:400 12.5px/1 'Noto Sans KR',sans-serif;letter-spacing:.05em;cursor:pointer" style-hover="background:#3E462C">장바구니 담기</button>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<sc-for list="{{ fresh }}" as="p" hint-placeholder-count="4">
+<div style="display:flex;gap:20px;align-items:center;padding:16px;background:#EDE8E0">
+<div style="width:96px;height:96px;flex:none;background:repeating-linear-gradient(135deg,#E1DACC 0 6px,#EAE5DB 6px 12px)"></div>
+<div style="display:flex;flex-direction:column;gap:7px;flex:1">
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font:400 14.5px/1.4 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ p.ko }}</span>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}"><span style="font:500 8.5px/1 Archivo,sans-serif;letter-spacing:.14em;color:#a09a8c">SOLD OUT</span></sc-if>
+</div>
+<span style="font:400 10px/1 ui-monospace,Menlo,monospace;color:#8c8578">{{ p.en }}</span>
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font:400 14px/1 'Source Serif 4',serif;color:#1F1D1A">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="font:400 11px/1 'Source Serif 4',serif;color:#a09a8c;text-decoration:line-through">{{ p.was }}원</span></sc-if>
+</div>
+</div>
+<sc-if value="{{ p.avail }}" hint-placeholder-val="{{ true }}">
+<button style="flex:none;padding:11px 16px;background:transparent;border:1px solid #C9C2B4;color:#1F1D1A;font:400 11.5px/1 'Noto Sans KR',sans-serif;cursor:pointer" style-hover="background:#1F1D1A;border-color:#1F1D1A;color:#F6F3EE">담기</button>
+</sc-if>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}">
+<button style="flex:none;padding:11px 16px;background:transparent;border:1px dashed #C9C2B4;color:#8c8578;font:400 11.5px/1 'Noto Sans KR',sans-serif;cursor:pointer">알림</button>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:120px 88px 0;display:flex;flex-direction:column;align-items:center;gap:10px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#a09a8c">Rooms</span>
+<h2 style="margin:0;font:400 34px/1.3 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.015em;color:#1F1D1A">카테고리</h2>
+</div>
+<div style="padding:52px 88px 0;display:grid;grid-template-columns:repeat(2,1fr);gap:36px">
+<sc-for list="{{ cats }}" as="c" hint-placeholder-count="4">
+<div style="display:grid;grid-template-columns:1fr 1.1fr;background:#EDE8E0">
+<div style="background:repeating-linear-gradient(135deg,#E1DACC 0 7px,#EAE5DB 7px 14px);min-height:240px;display:flex;align-items:flex-end;padding:18px">
+<span style="font:400 9px/1.5 ui-monospace,Menlo,monospace;color:#948c7e">{{ c.ph }}</span>
+</div>
+<div style="padding:30px 30px 30px 32px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;flex-direction:column;gap:5px">
+<span style="font:400 10px/1 ui-monospace,Menlo,monospace;color:#3E462C">{{ c.no }}</span>
+<span style="font:400 23px/1.3 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">{{ c.label }}</span>
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#a09a8c">{{ c.en }}</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:7px">
+<sc-for list="{{ c.items }}" as="it" hint-placeholder-count="6">
+<a href="#1c" style="font:300 12.5px/1.4 'Noto Serif KR',serif;color:#6b665b" style-hover="color:#1F1D1A">{{ it }}</a>
+</sc-for>
+</div>
+</div>
+</div>
+</sc-for>
+</div>
+
+<div style="margin: 120px 0 0; padding: 96px 88px; display: flex; flex-direction: column; align-items: center; gap: 56px; background-color: #79835A">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:rgba(246,243,238,.5)">How it works</span>
+<h2 style="margin:0;font:400 34px/1.3 Archivo,'Noto Sans KR',sans-serif;color:#F6F3EE">스토어 이용 방법</h2>
+<p style="margin:4px 0 0;font:300 15px/1.9 'Source Serif 4','Noto Serif KR',serif;color:rgba(246,243,238,.66);max-width:34em">결제 단계가 없습니다. 요청과 확인, 두 번의 대화로 끝납니다.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:40px;width:100%">
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:14px;padding-top:22px;border-top:1px solid rgba(246,243,238,.22)">
+<span style="font:400 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.14em;color:rgba(246,243,238,.5)">{{ s.no }}</span>
+<span style="font:400 19px/1.4 'Noto Sans KR',sans-serif;color:#F6F3EE">{{ s.ko }}</span>
+<span style="font:300 13.5px/1.95 'Noto Serif KR',serif;color:rgba(246,243,238,.62)">{{ s.desc }}</span>
+</div>
+</sc-for>
+</div>
+<div style="display:flex;gap:12px;padding-top:8px">
+<a href="#1c" style="padding:15px 30px;background:#F6F3EE;color:#1F1D1A;font:400 12.5px/1 'Noto Sans KR',sans-serif">카카오톡 상담</a>
+<a href="#1c" style="padding:15px 30px;border:1px solid rgba(246,243,238,.4);color:#F6F3EE;font:400 12.5px/1 'Noto Sans KR',sans-serif">대량구매 · 견적 문의</a>
+</div>
+</div>
+
+<div style="padding:88px 88px 0">
+<div style="display:flex;align-items:baseline;justify-content:center;gap:12px;padding-bottom:26px">
+<h3 style="margin:0;font:400 15px/1 'Noto Sans KR',sans-serif;color:#1F1D1A">최근 본 상품</h3>
+<span style="font:400 9.5px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#a09a8c">Recently viewed</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:22px">
+<sc-for list="{{ recent }}" as="r" hint-placeholder-count="6">
+<a href="#1c" style="display:flex;flex-direction:column;gap:10px">
+<div style="aspect-ratio:1/1;background:#EDE8E0;padding:16px"><div style="width:100%;height:100%;background:repeating-linear-gradient(135deg,#E1DACC 0 5px,#EAE5DB 5px 10px)"></div></div>
+<span style="font:400 11.5px/1.4 'Noto Sans KR',sans-serif;color:#55514a;text-align:center">{{ r.ko }}</span>
+</a>
+</sc-for>
+</div>
+</div>
+
+<div style="margin-top:100px;padding:70px 88px 40px;background:#EDE8E0;display:flex;flex-direction:column;gap:52px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+<span style="font:500 15px/1 Archivo,sans-serif;letter-spacing:.34em;color:#1F1D1A">STORE NUMBER ONE</span>
+<span style="font:300 12px/1 'Noto Sans KR',sans-serif;letter-spacing:.24em;color:#8c8578">스토어 넘버원</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:44px">
+<sc-for list="{{ foot4 }}" as="f" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:12px">
+<span style="font:400 10px/1 Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#a09a8c">{{ f.en }}</span>
+<span style="font:400 13px/1 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ f.ko }}</span>
+<sc-for list="{{ f.items }}" as="it" hint-placeholder-count="4">
+<a href="#1c" style="font:300 12.5px/1.9 'Noto Serif KR',serif;color:#6b665b">{{ it }}</a>
+</sc-for>
+</div>
+</sc-for>
+</div>
+<div style="padding-top:22px;border-top:1px solid #DED7C9;display:flex;justify-content:space-between;font:400 11px/1.8 Archivo,'Noto Sans KR',sans-serif;color:#8c8578">
+<span>스토어 넘버원 · 사업자등록번호 000-00-00000 · 서울시 성동구 000로 00 · 대표 000</span>
+<span>© 2026 Store Number One</span>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">다음에 시도해 볼 것: “<a class="dv-oid" href="#1b">1b</a>로 가되 헤더는 <a class="dv-oid" href="#1a">1a</a>처럼” · “<a class="dv-oid" href="#1c">1c</a>의 Hero를 밝은 배경으로” · “카드에서 영문 병기 빼고 더 조용하게”</p>
+</section>
+
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">M</a><span class="dv-tname">모바일 390 — 세 안의 대응</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1d"><div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>모바일 — <a class="dv-oid" href="#1a">1a</a> 미니멀</div>
+<div class="dv-card" style="width:390px;background:#F6F3EE">
+<div style="padding:9px 20px;background:#EDE8E0;font:400 9.5px/1.4 Archivo,'Noto Sans KR',sans-serif;letter-spacing:.06em;color:#3E462C;text-align:center">결제 없음 · 주문 요청 후 담당자 연락</div>
+<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 20px">
+<span style="width:18px;height:12px;border-top:1.2px solid #1F1D1A;border-bottom:1.2px solid #1F1D1A"></span>
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px">
+<span style="font:500 11px/1 Archivo,sans-serif;letter-spacing:.26em;color:#1F1D1A">STORE Nº1</span>
+<span style="font:300 8px/1 'Noto Sans KR',sans-serif;letter-spacing:.2em;color:#8c8578">스토어 넘버원</span>
+</div>
+<span style="font:400 11px/1 'Noto Sans KR',sans-serif;color:#1F1D1A">담기 (2)</span>
+</div>
+<div style="margin:0 20px 20px;display:flex;align-items:center;gap:9px;padding:12px 14px;background:#EDE8E0">
+<span style="width:10px;height:10px;border:1.2px solid #8c8578;border-radius:50%"></span>
+<span style="font:300 12.5px/1 'Noto Serif KR',serif;color:#a09a8c">상품 검색</span>
+</div>
+<div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#E6E1D6 0 6px,#EDE9E1 6px 12px);display:flex;align-items:flex-end;padding:16px">
+<span style="font:400 9px/1.5 ui-monospace,Menlo,monospace;color:#9a9284">hero image</span>
+</div>
+<div style="padding:40px 24px 44px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center">
+<span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#3E462C">Request, don’t checkout</span>
+<h1 style="margin:0;font:400 32px/1.25 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.02em;color:#1F1D1A">오래 쓸 물건만<br>골라 두었습니다</h1>
+<p style="margin:0;font:300 14px/1.9 'Noto Serif KR',serif;color:#55514a">결제창이 없습니다. 장바구니에 담아 요청을 보내면 담당자가 연락드립니다.</p>
+<a href="#1d" style="width:100%;box-sizing:border-box;padding:16px 0;background:#1F1D1A;color:#F6F3EE;font:400 13px/1 'Noto Sans KR',sans-serif;text-align:center">전체 상품 보기</a>
+</div>
+<div style="padding:0 24px 44px">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:22px">
+<h2 style="margin:0;font:400 20px/1.2 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">추천 상품</h2>
+<a href="#1d" style="font:400 11px/1 'Noto Sans KR',sans-serif">전체</a>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<sc-for list="{{ feat }}" as="p" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:11px">
+<div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#E6E1D6 0 5px,#EFEBE3 5px 10px)"></div>
+<div style="display:flex;flex-direction:column;gap:3px">
+<div style="display:flex;align-items:baseline;gap:6px">
+<span style="font:400 13px/1.4 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ p.ko }}</span>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}"><span style="font:500 8px/1 Archivo,sans-serif;letter-spacing:.12em;color:#a09a8c">SOLD OUT</span></sc-if>
+</div>
+<span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#a09a8c">{{ p.en }}</span>
+</div>
+<div style="display:flex;align-items:baseline;gap:7px">
+<span style="font:400 13px/1 'Source Serif 4',serif;color:#1F1D1A">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="font:400 10.5px/1 'Source Serif 4',serif;color:#a09a8c;text-decoration:line-through">{{ p.was }}원</span></sc-if>
+</div>
+<sc-if value="{{ p.avail }}" hint-placeholder-val="{{ true }}">
+<button style="padding:13px 0;background:transparent;border:1px solid #C9C2B4;color:#1F1D1A;font:400 11.5px/1 'Noto Sans KR',sans-serif;cursor:pointer">담기</button>
+</sc-if>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}">
+<button style="padding:13px 0;background:transparent;border:1px dashed #C9C2B4;color:#8c8578;font:400 11.5px/1 'Noto Sans KR',sans-serif;cursor:pointer">재입고 알림</button>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="padding:0 24px 44px;display:flex;flex-direction:column;gap:0">
+<h2 style="margin:0 0 22px;font:400 20px/1.2 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">카테고리</h2>
+<sc-for list="{{ cats }}" as="c" hint-placeholder-count="4">
+<a href="#1d" style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid #DED7C9">
+<span style="display:flex;flex-direction:column;gap:4px">
+<span style="font:400 16px/1.2 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ c.label }}</span>
+<span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#a09a8c">{{ c.en }}</span>
+</span>
+<span style="font:400 13px/1 'Noto Sans KR',sans-serif;color:#a09a8c">+</span>
+</a>
+</sc-for>
+</div>
+<div style="margin: 0 24px 44px; padding: 32px 26px; display: flex; flex-direction: column; gap: 12px; background-color: #687646">
+<span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,243,238,.55)">For business</span>
+<h3 style="margin:0;font:400 20px/1.4 Archivo,'Noto Sans KR',sans-serif;color:#F6F3EE">대량구매 · 견적 문의</h3>
+<a href="#1d" style="margin-top:6px;padding:14px 0;background:#F6F3EE;color:#1F1D1A;font:400 12px/1 'Noto Sans KR',sans-serif;text-align:center">문의하기</a>
+</div>
+<div style="padding:0 24px 44px">
+<h2 style="margin:0 0 22px;font:400 20px/1.2 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">스토어 이용 방법</h2>
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+<div style="display:flex;gap:16px;padding:18px 0;border-top:1px solid #DED7C9">
+<span style="font:400 11px/1.6 Archivo,sans-serif;letter-spacing:.1em;color:#3E462C;flex:none">{{ s.no }}</span>
+<span style="display:flex;flex-direction:column;gap:6px">
+<span style="font:400 15px/1.3 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ s.ko }}</span>
+<span style="font:300 12.5px/1.85 'Noto Serif KR',serif;color:#6b665b">{{ s.desc }}</span>
+</span>
+</div>
+</sc-for>
+</div>
+<div style="padding:34px 24px 26px;background:#EDE8E0;display:flex;flex-direction:column;gap:16px">
+<span style="font:500 12px/1 Archivo,sans-serif;letter-spacing:.26em;color:#1F1D1A">STORE NUMBER ONE</span>
+<span style="font:300 12px/1.9 'Noto Serif KR',serif;color:#6b665b">오래 쓸 물건을 골라 두는 편집 스토어.</span>
+<div style="display:flex;flex-wrap:wrap;gap:12px 18px;font:400 11.5px/1 'Noto Sans KR',sans-serif">
+<a href="#1d">이용 방법</a><a href="#1d">배송 안내</a><a href="#1d">공지사항</a><a href="#1d">문의</a><a href="#1d">개인정보</a>
+</div>
+<span style="font:400 10px/1.7 Archivo,'Noto Sans KR',sans-serif;color:#a09a8c">© 2026 Store Number One · 사업자등록번호 000-00-00000</span>
+</div>
+<div style="position:sticky;bottom:0;display:flex;gap:10px;padding:14px 20px;background:rgba(246,243,238,.96);border-top:1px solid #DED7C9">
+<a href="#1d" style="flex:1;padding:15px 0;background:#1F1D1A;color:#F6F3EE;font:400 12.5px/1 'Noto Sans KR',sans-serif;text-align:center">Google로 계속하기</a>
+<a href="#1d" style="padding:15px 18px;border:1px solid #C9C2B4;color:#1F1D1A;font:400 12.5px/1 'Noto Sans KR',sans-serif">상담</a>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="1e"><div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a>모바일 — <a class="dv-oid" href="#1b">1b</a> 편집숍</div>
+<div class="dv-card" style="width:390px;background:#EDE8E0">
+<div style="padding:9px 20px;background:#1F1D1A;font:400 9.5px/1.4 Archivo,'Noto Sans KR',sans-serif;letter-spacing:.1em;color:rgba(246,243,238,.75);text-align:center">NO CHECKOUT · 요청 후 담당자 연락</div>
+<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #DED7C9">
+<span style="font:600 18px/1 Archivo,sans-serif;color:#1F1D1A">STORE Nº1</span>
+<div style="display:flex;gap:14px;font:400 11.5px/1 'Noto Sans KR',sans-serif;color:#1F1D1A"><a href="#1e">검색</a><a href="#1e">담기 (2)</a><span style="width:16px;height:10px;border-top:1.2px solid #1F1D1A;border-bottom:1.2px solid #1F1D1A"></span></div>
+</div>
+<div style="display:flex;gap:0;overflow:hidden;border-bottom:1px solid #DED7C9">
+<sc-for list="{{ navB }}" as="n" hint-placeholder-count="4">
+<a href="#1e" style="display:flex;align-items:baseline;gap:5px;padding:12px 14px;border-right:1px solid #DED7C9">
+<span style="font:500 8px/1 Archivo,sans-serif;color:#3E462C">{{ n.no }}</span>
+<span style="font:400 12.5px/1 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ n.label }}</span>
+</a>
+</sc-for>
+</div>
+<div style="padding:36px 24px 30px;display:flex;flex-direction:column;gap:18px">
+<span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#3E462C">Issue 01</span>
+<h1 style="margin:0;font:400 31px/1.24 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.02em;color:#1F1D1A">좋은 물건은<br>재촉하지 않습니다</h1>
+<p style="margin:0;font:300 14px/1.95 'Noto Serif KR',serif;color:#55514a">뷰티 · 의류 · 식품 · 생활 도구. 결제창은 없습니다. 담아 두고 요청만 보내세요.</p>
+<div style="display:flex;gap:8px">
+<a href="#1e" style="flex:1;padding:15px 0;background:#3E462C;color:#F6F3EE;font:400 12.5px/1 'Noto Sans KR',sans-serif;text-align:center">이번 주 셀렉션</a>
+<a href="#1e" style="flex:1;padding:15px 0;border:1px solid #1F1D1A;color:#1F1D1A;font:400 12.5px/1 'Noto Sans KR',sans-serif;text-align:center">요청 방법</a>
+</div>
+</div>
+<div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#E1DACC 0 7px,#E9E4DA 7px 14px);display:flex;align-items:flex-end;padding:18px">
+<span style="font:400 9px/1.5 ui-monospace,Menlo,monospace;color:#948c7e">hero image — 리넨 위 정물</span>
+</div>
+<div style="display:flex;gap:22px;padding:16px 24px;background:#E3DDD1;font:300 11px/1.6 'Noto Serif KR',serif;color:#7d766a">
+<span>취급 <b style="font-weight:500;color:#1F1D1A">412</b>점</span><span>회신 <b style="font-weight:500;color:#1F1D1A">4시간</b></span><span>해외배송 <b style="font-weight:500;color:#1F1D1A">가능</b></span>
+</div>
+<div style="padding:40px 24px 0">
+<div style="display:flex;align-items:baseline;gap:12px;padding-bottom:20px;border-bottom:1px solid #1F1D1A">
+<span style="font:500 10px/1 Archivo,sans-serif;letter-spacing:.14em;color:#3E462C">01</span>
+<h2 style="margin:0;font:400 21px/1.2 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">추천 상품</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px;padding-top:24px">
+<sc-for list="{{ feat3 }}" as="p" hint-placeholder-count="3">
+<div style="background:#F6F3EE;border:1px solid #DED7C9">
+<div style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#E1DACC 0 6px,#EAE5DB 6px 12px)"></div>
+<div style="padding:20px;display:flex;flex-direction:column;gap:12px">
+<span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#3E462C">{{ p.cat }}</span>
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font:400 17px/1.3 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ p.ko }}</span>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}"><span style="font:500 8px/1 Archivo,sans-serif;letter-spacing:.12em;color:#a09a8c">SOLD OUT</span></sc-if>
+</div>
+<span style="font:300 12.5px/1.8 'Noto Serif KR',serif;color:#6b665b">{{ p.note }}</span>
+<div style="display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid #DED7C9">
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font:400 16px/1 'Source Serif 4',serif;color:#1F1D1A">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="font:400 11px/1 'Source Serif 4',serif;color:#a09a8c;text-decoration:line-through">{{ p.was }}원</span></sc-if>
+</div>
+<sc-if value="{{ p.avail }}" hint-placeholder-val="{{ true }}">
+<button style="padding:12px 18px;background:#1F1D1A;border:none;color:#F6F3EE;font:400 11.5px/1 'Noto Sans KR',sans-serif;cursor:pointer">장바구니 담기</button>
+</sc-if>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}">
+<button style="padding:12px 18px;background:transparent;border:1px dashed #C9C2B4;color:#8c8578;font:400 11.5px/1 'Noto Sans KR',sans-serif;cursor:pointer">재입고 알림</button>
+</sc-if>
+</div>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="padding:40px 24px 0">
+<div style="display:flex;align-items:baseline;gap:12px;padding-bottom:16px;border-bottom:1px solid #1F1D1A">
+<span style="font:500 10px/1 Archivo,sans-serif;letter-spacing:.14em;color:#3E462C">02</span>
+<h2 style="margin:0;font:400 21px/1.2 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">인기 상품</h2>
+</div>
+<sc-for list="{{ pop }}" as="p" hint-placeholder-count="5">
+<div style="display:flex;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid #DED7C9">
+<span style="font:400 15px/1 Archivo,sans-serif;color:#C9C2B4;flex:none;width:22px">{{ p.rank }}</span>
+<div style="width:64px;height:64px;flex:none;background:repeating-linear-gradient(135deg,#E1DACC 0 5px,#EAE5DB 5px 10px)"></div>
+<div style="display:flex;flex-direction:column;gap:5px;flex:1">
+<div style="display:flex;align-items:baseline;gap:7px">
+<span style="font:400 14px/1.3 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ p.ko }}</span>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}"><span style="font:500 8px/1 Archivo,sans-serif;letter-spacing:.12em;color:#a09a8c">SOLD OUT</span></sc-if>
+</div>
+<div style="display:flex;align-items:baseline;gap:7px">
+<span style="font:400 13px/1 'Source Serif 4',serif;color:#1F1D1A">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="font:400 10.5px/1 'Source Serif 4',serif;color:#a09a8c;text-decoration:line-through">{{ p.was }}원</span></sc-if>
+</div>
+</div>
+<sc-if value="{{ p.avail }}" hint-placeholder-val="{{ true }}">
+<button style="flex:none;padding:11px 14px;background:transparent;border:1px solid #1F1D1A;color:#1F1D1A;font:400 11px/1 'Noto Sans KR',sans-serif;cursor:pointer">담기</button>
+</sc-if>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}">
+<button style="flex:none;padding:11px 14px;background:transparent;border:1px dashed #C9C2B4;color:#8c8578;font:400 11px/1 'Noto Sans KR',sans-serif;cursor:pointer">알림</button>
+</sc-if>
+</div>
+</sc-for>
+</div>
+<div style="padding:40px 24px 0">
+<div style="display:flex;align-items:baseline;gap:12px;padding-bottom:16px;border-bottom:1px solid #1F1D1A">
+<span style="font:500 10px/1 Archivo,sans-serif;letter-spacing:.14em;color:#3E462C">03</span>
+<h2 style="margin:0;font:400 21px/1.2 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">카테고리</h2>
+</div>
+<sc-for list="{{ cats }}" as="c" hint-placeholder-count="4">
+<div style="padding:20px 0;border-bottom:1px solid #DED7C9;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:baseline;gap:10px">
+<span style="font:400 10px/1 Archivo,sans-serif;color:#3E462C">{{ c.no }}</span>
+<span style="font:400 19px/1.2 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">{{ c.label }}</span>
+<span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#a09a8c">{{ c.en }}</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:7px">
+<sc-for list="{{ c.items }}" as="it" hint-placeholder-count="6">
+<a href="#1e" style="padding:7px 12px;border:1px solid #DED7C9;background:#F6F3EE;font:300 11.5px/1 'Noto Serif KR',serif;color:#55514a">{{ it }}</a>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="margin:40px 24px 0;padding:30px 24px;background:#1F1D1A;display:flex;flex-direction:column;gap:12px">
+<span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,243,238,.5)">Talk to us</span>
+<h3 style="margin:0;font:400 19px/1.4 Archivo,'Noto Sans KR',sans-serif;color:#F6F3EE">카카오톡 · 전화 상담</h3>
+<span style="font:300 12.5px/1.9 'Noto Serif KR',serif;color:rgba(246,243,238,.65)">평일 10:00–18:00 · 대량구매 견적도 함께 문의하세요.</span>
+<div style="display:flex;gap:8px;margin-top:6px">
+<a href="#1e" style="flex:1;padding:13px 0;border:1px solid rgba(246,243,238,.4);color:#F6F3EE;font:400 11.5px/1 'Noto Sans KR',sans-serif;text-align:center">카카오톡</a>
+<a href="#1e" style="flex:1;padding:13px 0;border:1px solid rgba(246,243,238,.4);color:#F6F3EE;font:400 11.5px/1 'Noto Sans KR',sans-serif;text-align:center">전화</a>
+</div>
+</div>
+<div style="padding:40px 24px 0">
+<h2 style="margin:0 0 4px;font:400 21px/1.2 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">스토어 이용 방법</h2>
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:8px;padding:20px 0;border-bottom:1px solid #DED7C9">
+<span style="font:400 26px/1 Archivo,sans-serif;color:#C9C2B4">{{ s.no }}</span>
+<span style="font:400 16px/1.3 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ s.ko }}</span>
+<span style="font:300 12.5px/1.85 'Noto Serif KR',serif;color:#6b665b">{{ s.desc }}</span>
+</div>
+</sc-for>
+</div>
+<div style="margin-top: 40px; padding: 34px 24px 26px; display: flex; flex-direction: column; gap: 16px; background-color: #978B78">
+<span style="font:600 18px/1 Archivo,sans-serif;color:#F6F3EE">STORE Nº1</span>
+<span style="font:300 12px/1.9 'Noto Serif KR',serif;color:rgba(246,243,238,.6)">오래 쓸 물건을 골라 두는 편집 스토어.</span>
+<div style="display:flex;flex-wrap:wrap;gap:12px 18px;font:400 11.5px/1 'Noto Sans KR',sans-serif">
+<a href="#1e" style="color:rgba(246,243,238,.7)">이용 방법</a><a href="#1e" style="color:rgba(246,243,238,.7)">배송 안내</a><a href="#1e" style="color:rgba(246,243,238,.7)">공지사항</a><a href="#1e" style="color:rgba(246,243,238,.7)">문의</a>
+</div>
+<span style="font:400 10px/1.7 Archivo,'Noto Sans KR',sans-serif;color:rgba(246,243,238,.4)">© 2026 Store Number One</span>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="1f"><div class="dv-olabel"><a class="dv-oid" href="#1f">1f</a>모바일 — <a class="dv-oid" href="#1c">1c</a> 갤러리</div>
+<div class="dv-card" style="width:390px;background:#F6F3EE">
+<div style="padding: 8px 20px; background: #3E462C; font: 400 9.5px/1.4 Archivo,'Noto Sans KR',sans-serif; letter-spacing: .08em; color: #FFFFFFCC; text-align: center">결제창 없음 / 요청 → 담당자 연락</div>
+<div style="background:#26291D;padding:0 0 60px;position:relative">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; position: relative; z-index: 5; background-color: #FFFFFF">
+<span style="width:18px;height:12px;border-top:1.2px solid rgba(246,243,238,.8);border-bottom:1.2px solid rgba(246,243,238,.8)"></span>
+<span style="font: 500 11px/1 Archivo,sans-serif; letter-spacing: .28em; color: #000000">STORE Nº1</span>
+<span style="font:400 11px/1 'Noto Sans KR',sans-serif;color:rgba(246,243,238,.8)">담기 (2)</span>
+</div>
+<div style="position: absolute; inset: 0; background-color: #FFFFFFEB"></div>
+<div style="position: relative; z-index: 5; padding: 52px 26px 0; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; background-color: #90816A">
+<span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.26em;text-transform:uppercase;color:rgba(246,243,238,.6)">Vol. 01</span>
+<h1 style="margin:0;font:400 36px/1.18 Archivo,'Noto Sans KR',sans-serif;letter-spacing:-.025em;color:#F6F3EE">첫 좋은 물건을<br>고르는 자리</h1>
+<p style="margin:0;font:300 14px/1.95 'Noto Serif KR',serif;color:rgba(246,243,238,.7)">Google 로그인 후 담고, 주문 요청을 보내면 담당자가 연락드립니다.</p>
+<a href="#1f" style="width:100%;box-sizing:border-box;margin-top:6px;padding:16px 0;background:#F6F3EE;color:#1F1D1A;font:400 12.5px/1 'Noto Sans KR',sans-serif;text-align:center">셀렉션 둘러보기</a>
+<span style="font:400 9px/1.5 ui-monospace,Menlo,monospace;color:rgba(246,243,238,.4);padding-top:10px">hero image — 어두운 배경 위 단독 정물</span>
+</div>
+</div>
+<div style="padding:44px 24px 0;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
+<span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#a09a8c">Room 01 — Selected</span>
+<h2 style="margin:0;font:400 23px/1.3 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">추천 상품</h2>
+</div>
+<div style="padding:28px 24px 0;display:flex;flex-direction:column;gap:32px">
+<sc-for list="{{ feat3 }}" as="p" hint-placeholder-count="3">
+<div style="display:flex;flex-direction:column;gap:0">
+<div style="background:#EDE8E0;padding:30px">
+<div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#E1DACC 0 6px,#EAE5DB 6px 12px)"></div>
+</div>
+<div style="padding:18px 2px 0;display:flex;flex-direction:column;gap:9px">
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font:400 16px/1.3 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ p.ko }}</span>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}"><span style="font:500 8px/1 Archivo,sans-serif;letter-spacing:.12em;color:#a09a8c">SOLD OUT</span></sc-if>
+</div>
+<span style="font:400 10px/1.6 ui-monospace,Menlo,monospace;color:#8c8578">{{ p.en }} · {{ p.spec }}</span>
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font:400 15px/1 'Source Serif 4',serif;color:#1F1D1A">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="font:400 11px/1 'Source Serif 4',serif;color:#a09a8c;text-decoration:line-through">{{ p.was }}원</span></sc-if>
+</div>
+<sc-if value="{{ p.avail }}" hint-placeholder-val="{{ true }}">
+<button style="margin-top:6px;padding:14px 0;background:transparent;border:1px solid #1F1D1A;color:#1F1D1A;font:400 12px/1 'Noto Sans KR',sans-serif;cursor:pointer">장바구니 담기</button>
+</sc-if>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}">
+<button style="margin-top:6px;padding:14px 0;background:transparent;border:1px dashed #C9C2B4;color:#8c8578;font:400 12px/1 'Noto Sans KR',sans-serif;cursor:pointer">재입고 알림 요청</button>
+</sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="margin-top:44px;padding:40px 24px;background:#EDE8E0;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
+<span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#a09a8c">Room 02</span>
+<h2 style="margin:0;font:400 23px/1.3 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">인기 상품</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+<sc-for list="{{ pop }}" as="p" hint-placeholder-count="5">
+<div style="background:#F6F3EE;display:flex;flex-direction:column">
+<div style="padding:18px 18px 0"><div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#E1DACC 0 5px,#EAE5DB 5px 10px)"></div></div>
+<div style="padding:14px 16px 16px;display:flex;flex-direction:column;gap:7px">
+<div style="display:flex;align-items:baseline;gap:6px">
+<span style="font:400 13px/1.3 'Noto Sans KR',sans-serif;color:#1F1D1A">{{ p.ko }}</span>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}"><span style="font:500 7.5px/1 Archivo,sans-serif;letter-spacing:.1em;color:#a09a8c">SOLD OUT</span></sc-if>
+</div>
+<div style="display:flex;align-items:baseline;gap:6px">
+<span style="font:400 12.5px/1 'Source Serif 4',serif;color:#1F1D1A">{{ p.price }}원</span>
+<sc-if value="{{ p.sale }}" hint-placeholder-val="{{ false }}"><span style="font:400 10px/1 'Source Serif 4',serif;color:#a09a8c;text-decoration:line-through">{{ p.was }}원</span></sc-if>
+</div>
+<sc-if value="{{ p.avail }}" hint-placeholder-val="{{ true }}">
+<button style="padding:11px 0;background:transparent;border:1px solid #C9C2B4;color:#1F1D1A;font:400 11px/1 'Noto Sans KR',sans-serif;cursor:pointer">담기</button>
+</sc-if>
+<sc-if value="{{ p.sold }}" hint-placeholder-val="{{ false }}">
+<button style="padding:11px 0;background:transparent;border:1px dashed #C9C2B4;color:#8c8578;font:400 11px/1 'Noto Sans KR',sans-serif;cursor:pointer">알림</button>
+</sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="padding:44px 24px 0;display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center">
+<span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#a09a8c">Rooms</span>
+<h2 style="margin:0;font:400 23px/1.3 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">카테고리</h2>
+</div>
+<div style="padding:26px 24px 0;display:flex;flex-direction:column;gap:16px">
+<sc-for list="{{ cats }}" as="c" hint-placeholder-count="4">
+<div style="background:#EDE8E0;display:flex;flex-direction:column">
+<div style="aspect-ratio:16/9;background:repeating-linear-gradient(135deg,#E1DACC 0 6px,#EAE5DB 6px 12px)"></div>
+<div style="padding:20px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;flex-direction:column;gap:4px">
+<span style="font:400 9.5px/1 ui-monospace,Menlo,monospace;color:#3E462C">{{ c.no }}</span>
+<span style="font:400 19px/1.2 Archivo,'Noto Sans KR',sans-serif;color:#1F1D1A">{{ c.label }}</span>
+<span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#a09a8c">{{ c.en }}</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:6px 14px">
+<sc-for list="{{ c.items }}" as="it" hint-placeholder-count="6">
+<a href="#1f" style="font:300 12px/1.4 'Noto Serif KR',serif;color:#6b665b">{{ it }}</a>
+</sc-for>
+</div>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="margin-top: 44px; padding: 44px 24px; display: flex; flex-direction: column; gap: 24px; background-color: #90816A">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
+<span style="font:400 9px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:rgba(246,243,238,.5)">How it works</span>
+<h2 style="margin:0;font:400 23px/1.3 Archivo,'Noto Sans KR',sans-serif;color:#F6F3EE">스토어 이용 방법</h2>
+</div>
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:1px solid rgba(246,243,238,.2)">
+<span style="font:400 10px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;color:rgba(246,243,238,.5)">{{ s.no }}</span>
+<span style="font:400 16px/1.3 'Noto Sans KR',sans-serif;color:#F6F3EE">{{ s.ko }}</span>
+<span style="font:300 12.5px/1.9 'Noto Serif KR',serif;color:rgba(246,243,238,.62)">{{ s.desc }}</span>
+</div>
+</sc-for>
+<div style="display:flex;gap:8px;padding-top:6px">
+<a href="#1f" style="flex:1;padding:14px 0;background:#F6F3EE;color:#1F1D1A;font:400 11.5px/1 'Noto Sans KR',sans-serif;text-align:center">카카오톡 상담</a>
+<a href="#1f" style="flex:1;padding:14px 0;border:1px solid rgba(246,243,238,.4);color:#F6F3EE;font:400 11.5px/1 'Noto Sans KR',sans-serif;text-align:center">견적 문의</a>
+</div>
+</div>
+<div style="padding:36px 24px 30px;background:#EDE8E0;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+<span style="font:500 12px/1 Archivo,sans-serif;letter-spacing:.28em;color:#1F1D1A">STORE NUMBER ONE</span>
+<span style="font:300 12px/1.9 'Noto Serif KR',serif;color:#6b665b">오래 쓸 물건을 골라 두는 편집 스토어.</span>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px 16px;font:400 11.5px/1 'Noto Sans KR',sans-serif">
+<a href="#1f">이용 방법</a><a href="#1f">배송 안내</a><a href="#1f">공지사항</a><a href="#1f">문의</a>
+</div>
+<span style="font:400 10px/1.7 Archivo,'Noto Sans KR',sans-serif;color:#a09a8c">© 2026 Store Number One</span>
+</div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">다음에 시도해 볼 것: “모바일에 하단 고정 담기 바를 <a class="dv-oid" href="#1e">1e</a>·<a class="dv-oid" href="#1f">1f</a>에도” · “Google 로그인 유도 모달 화면 추가” · “장바구니 · 주문 요청 완료 화면까지”</p>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#8A6B3A&quot;,&quot;options&quot;:[&quot;#8A6B3A&quot;,&quot;#7A2E2E&quot;,&quot;#33553F&quot;,&quot;#2F4A6B&quot;,&quot;#1A1A18&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;색&quot;},&quot;paperTone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;웜&quot;,&quot;아이보리&quot;,&quot;쿨&quot;,&quot;그레이&quot;],&quot;default&quot;:&quot;그레이&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;색&quot;},&quot;panelTint&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;색&quot;},&quot;headingFont&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Source Serif&quot;,&quot;Libre Baskerville&quot;,&quot;Instrument Serif&quot;,&quot;Archivo(산세리프)&quot;],&quot;default&quot;:&quot;Source Serif&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;타이포&quot;},&quot;displayScale&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0.8,&quot;max&quot;:1.4,&quot;step&quot;:0.05,&quot;default&quot;:1.2,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;타이포&quot;},&quot;showEnglish&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;타이포&quot;},&quot;upperMeta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;타이포&quot;},&quot;dropcap&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;타이포&quot;},&quot;heroLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;풀블리드 커버&quot;,&quot;2단 분할&quot;,&quot;타이포그래피만&quot;],&quot;default&quot;:&quot;풀블리드 커버&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;레이아웃&quot;},&quot;density&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;압축&quot;,&quot;보통&quot;,&quot;여유&quot;],&quot;default&quot;:&quot;압축&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;레이아웃&quot;},&quot;columns&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;min&quot;:2,&quot;max&quot;:5,&quot;default&quot;:4,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;레이아웃&quot;},&quot;imageRatio&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1:1&quot;,&quot;4:5&quot;,&quot;3:4&quot;,&quot;16:9&quot;],&quot;default&quot;:&quot;4:5&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;레이아웃&quot;},&quot;rules&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;레이아웃&quot;},&quot;sectionNumbering&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;레이아웃&quot;},&quot;cardStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;여백만&quot;,&quot;괘선&quot;,&quot;박스&quot;,&quot;패널&quot;],&quot;default&quot;:&quot;패널&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;상품 카드&quot;},&quot;priceLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;한 줄&quot;,&quot;두 줄&quot;],&quot;default&quot;:&quot;한 줄&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;상품 카드&quot;},&quot;ctaStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;채움&quot;,&quot;외곽선&quot;,&quot;텍스트 링크&quot;],&quot;default&quot;:&quot;채움&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;상품 카드&quot;},&quot;soldOutStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;라벨&quot;,&quot;이미지 오버레이&quot;,&quot;흐리게&quot;],&quot;default&quot;:&quot;이미지 오버레이&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;상품 카드&quot;},&quot;showNotice&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;영역&quot;},&quot;showWholesale&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;영역&quot;},&quot;showRecent&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;영역&quot;},&quot;showMobile&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;영역&quot;}}">
+class Component extends DCLogic {
+  state = { open: null };
+
+  menus() {
+    return [
+      { label: '뷰티', en: 'Beauty', no: '01', items: ['스킨케어', '클렌징', '메이크업', '헤어 · 바디', '향 · 퍼퓸', '선케어'] },
+      { label: '의류', en: 'Clothing', no: '02', items: ['상의', '하의', '한 벌 옷', '아우터', '모자', '벨트', '신발'] },
+      { label: '식품', en: 'Food', no: '03', items: ['차 · 커피', '오일 · 소스', '건과 · 곡물', '잼 · 스프레드', '선물 세트'] },
+      { label: '생활 도구', en: 'Tools', no: '04', items: ['주방 도구', '청소 도구', '문구', '수납', '리넨 · 패브릭'] }
+    ];
+  }
+
+  nav(scope) {
+    return this.menus().map(m => ({
+      ...m,
+      open: this.state.open === scope + '|' + m.label,
+      onEnter: () => this.setState({ open: scope + '|' + m.label }),
+      onLeave: () => this.setState({ open: null })
+    }));
+  }
+
+  theme() {
+    const p = this.props;
+    const tone = p.paperTone ?? '웜';
+    const papers = {
+      '웜': ['#F7F3EA', '#EFE9DB', '#E7DFCC', '#EDE7D9'],
+      '아이보리': ['#FBF9F4', '#F3F0E7', '#E9E4D6', '#F1EDE2'],
+      '쿨': ['#F5F5F2', '#ECEDE8', '#E1E3DC', '#EAEBE5'],
+      '그레이': ['#F1F0ED', '#E7E6E2', '#DCDBD6', '#E5E4E0']
+    };
+    const [paper, panel, line, img2] = papers[tone] || papers['웜'];
+    const accent = p.accent ?? '#8A6B3A';
+    const ink = '#1A1A18';
+    const sub = '#5C5850';
+    const muted = '#918C82';
+    const panelBg = (p.panelTint ?? true) ? panel : paper;
+
+    const fonts = {
+      'Source Serif': "'Source Serif 4','Noto Serif KR',serif",
+      'Libre Baskerville': "'Libre Baskerville','Noto Serif KR',serif",
+      'Instrument Serif': "'Instrument Serif','Noto Serif KR',serif",
+      'Archivo(산세리프)': "Archivo,'Noto Sans KR',sans-serif"
+    };
+    const fH = fonts[p.headingFont ?? 'Source Serif'] || fonts['Source Serif'];
+    const fB = "'Source Serif 4','Noto Serif KR',serif";
+    const fS = "Archivo,'Noto Sans KR',sans-serif";
+    const ds = p.displayScale ?? 1;
+    const showEn = p.showEnglish ?? true;
+    const upper = p.upperMeta ?? true;
+
+    const dens = { '압축': 0.62, '보통': 0.82, '여유': 1 }[p.density ?? '여유'] ?? 1;
+    const pad = Math.round(96 * (dens > 0.9 ? 1 : dens + 0.15));
+    const secTop = Math.round(120 * dens);
+    const gapX = Math.round(34 * dens) + 6;
+    const gapY = Math.round(50 * dens) + 8;
+    const cols = Math.max(2, Math.min(5, p.columns ?? 4));
+    const ratio = { '1:1': '1/1', '4:5': '4/5', '3:4': '3/4', '16:9': '16/9' }[p.imageRatio ?? '4:5'] || '4/5';
+
+    const cs = p.cardStyle ?? '괘선';
+    const cta = p.ctaStyle ?? '외곽선';
+    const soldMode = p.soldOutStyle ?? '라벨';
+    const rules = p.rules ?? true;
+    const stack = (p.priceLayout ?? '한 줄') === '두 줄';
+
+    const cardBase = {
+      '여백만': 'display:flex;flex-direction:column;gap:0;',
+      '괘선': 'display:flex;flex-direction:column;gap:0;border-top:1px solid ' + line + ';padding-top:14px;',
+      '박스': 'display:flex;flex-direction:column;gap:0;border:1px solid ' + line + ';',
+      '패널': 'display:flex;flex-direction:column;gap:0;background:' + panelBg + ';'
+    }[cs];
+    const cardPad = (cs === '박스' || cs === '패널') ? 'padding:18px 20px 22px;display:flex;flex-direction:column;gap:9px' : 'padding:14px 0 0;display:flex;flex-direction:column;gap:9px';
+    const imgPad = (cs === '박스' || cs === '패널') ? 'padding:18px 20px 0' : '';
+
+    const ctaS = {
+      '채움': `margin-top:6px;padding:13px 0;background:${ink};border:none;color:${paper};font:400 12px/1 ${fS};letter-spacing:.04em;cursor:pointer;text-align:center`,
+      '외곽선': `margin-top:6px;padding:13px 0;background:transparent;border:1px solid ${line};color:${ink};font:400 12px/1 ${fS};letter-spacing:.04em;cursor:pointer;text-align:center`,
+      '텍스트 링크': `margin-top:4px;padding:6px 0;background:none;border:none;border-bottom:1px solid ${line};color:${ink};font:400 12px/1 ${fS};letter-spacing:.04em;cursor:pointer;text-align:left;align-self:flex-start`
+    }[cta];
+    const ctaSold = ctaS.replace('border:1px solid ' + line, 'border:1px dashed ' + line).replace(`background:${ink};border:none;color:${paper}`, `background:transparent;border:1px dashed ${line};color:${muted}`);
+
+    return {
+      _t: { line, paper, panelBg, ink, sub, muted, accent, fH, fB, fS, ds, showEn, ratio, img2, cardBase, cardPad, imgPad, ctaS, ctaSold, soldMode, stack, cs },
+      showEn, secNum: p.sectionNumbering ?? true, dropcap: p.dropcap ?? true,
+      priceStack: stack, priceInline: !stack,
+      showNotice: p.showNotice ?? true, showRecent: p.showRecent ?? true,
+      showWholesale: p.showWholesale ?? true, showMobile: p.showMobile ?? true,
+      heroCover: (p.heroLayout ?? '풀블리드 커버') === '풀블리드 커버',
+      heroSplit: (p.heroLayout ?? '풀블리드 커버') === '2단 분할',
+      heroType: (p.heroLayout ?? '풀블리드 커버') === '타이포그래피만',
+      sPage: `background:${paper}`,
+      sMast: `display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:${Math.round(26 * dens) + 8}px ${pad}px ${Math.round(18 * dens) + 6}px`,
+      sUtil: `display:flex;align-items:center;justify-content:space-between;padding:0 ${pad}px;height:34px;background:${panelBg};font:400 11px/1 ${fS};letter-spacing:.02em;color:${sub}`,
+      sNavRow: `display:flex;justify-content:center;gap:${Math.round(30 * dens) + 8}px;padding:0 ${pad}px ${Math.round(14 * dens) + 6}px;border-bottom:${rules ? '1px solid ' + line : 'none'};position:relative`,
+      sNavKo: `font:400 14px/1 'Noto Sans KR',sans-serif;color:${ink};cursor:pointer`,
+      sNavEn: `font:400 9px/1 ${fS};letter-spacing:.16em;text-transform:uppercase;color:${muted}`,
+      sDrop: `position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:190px;background:${paper};border:1px solid ${line};padding:13px 0;display:flex;flex-direction:column;z-index:30;box-shadow:0 14px 34px rgba(26,26,24,.09)`,
+      sDropItem: `padding:8px 22px;font:400 13px/1.2 ${fB};color:${sub};white-space:nowrap`,
+      sWord: `font:400 ${Math.round(19 * ds)}px/1 ${fH};letter-spacing:.2em;color:${ink}`,
+      sWordSub: `font:300 10px/1 'Noto Sans KR',sans-serif;letter-spacing:.24em;color:${muted}`,
+      sUtilLink: `font:400 12px/1 'Noto Sans KR',sans-serif;color:${sub}`,
+      sSec: `padding:${secTop}px ${pad}px 0`,
+      sSecHd: `display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:${Math.round(30 * dens) + 12}px;border-bottom:${rules ? '1px solid ' + ink : 'none'}`,
+      sKicker: `font:400 10px/1 ${fS};letter-spacing:.22em;${upper ? 'text-transform:uppercase;' : ''}color:${muted}`,
+      sSecNo: `font:400 ${Math.round(11 * ds)}px/1 ${fS};letter-spacing:.16em;color:${accent}`,
+      sH1: `margin:0;font:400 ${Math.round(58 * ds)}px/1.1 ${fH};letter-spacing:-.02em;color:${ink};text-wrap:pretty`,
+      sH2: `margin:0;font:400 ${Math.round(30 * ds)}px/1.22 ${fH};letter-spacing:-.01em;color:${ink}`,
+      sH3: `margin:0;font:400 ${Math.round(22 * ds)}px/1.35 ${fH};color:${ink}`,
+      sLead: `margin:0;font:300 ${Math.round(17 * ds)}px/1.9 ${fB};color:${sub};text-wrap:pretty`,
+      sBody: `margin:0;font:300 ${Math.round(13.5 * ds)}px/1.9 ${fB};color:${sub}`,
+      sMeta: `font:400 10.5px/1 ${fS};letter-spacing:.12em;${upper ? 'text-transform:uppercase;' : ''}color:${muted}`,
+      sGrid: `display:grid;grid-template-columns:repeat(${cols},1fr);gap:${gapY}px ${gapX}px;padding-top:${Math.round(36 * dens) + 10}px`,
+      sGrid3: `display:grid;grid-template-columns:repeat(3,1fr);gap:${gapY}px ${gapX}px;padding-top:${Math.round(36 * dens) + 10}px`,
+      sImg: `aspect-ratio:${ratio};background:repeating-linear-gradient(135deg,${img2} 0 6px,${paper} 6px 12px);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 16px;position:relative`,
+      sPh: `font:400 9.5px/1.6 ui-monospace,Menlo,monospace;letter-spacing:.06em;color:${muted}`,
+      sName: `font:400 ${Math.round(16 * ds)}px/1.4 'Noto Sans KR',sans-serif;color:${ink}`,
+      sPrice: `font:400 ${Math.round(15 * ds)}px/1 ${fB};color:${ink}`,
+      sWas: `font:400 12px/1 ${fB};color:${muted};text-decoration:line-through`,
+      sSold: `font:500 9px/1 ${fS};letter-spacing:.14em;color:${muted}`,
+      sPanel: `background:${panelBg}`,
+      sRule: `height:1px;background:${line}`,
+      sAccentBlock: `padding:${Math.round(70 * dens) + 14}px ${pad}px;background:${accent};display:flex;align-items:center;justify-content:space-between;gap:56px;margin-top:${secTop}px`,
+      sAccentBtn: `padding:15px 32px;background:${paper};color:${ink};font:400 13px/1 'Noto Sans KR',sans-serif;letter-spacing:.05em;text-align:center`,
+      sAccentBtn2: `padding:15px 32px;border:1px solid rgba(255,255,255,.45);color:#fff;font:400 13px/1 'Noto Sans KR',sans-serif;letter-spacing:.05em;text-align:center`,
+      sFoot: `margin-top:${secTop}px;padding:${Math.round(64 * dens) + 14}px ${pad}px 34px;background:${panelBg};display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px`,
+      sFootBar: `padding:20px ${pad}px 34px;background:${panelBg};border-top:1px solid ${line};display:flex;justify-content:space-between;font:400 11px/1.8 ${fS};color:${muted}`,
+      sDropcap: `float:left;font:400 ${Math.round(54 * ds)}px/.82 ${fH};color:${accent};padding:4px 10px 0 0`,
+      sMobPad: `padding:0 22px`,
+      sMobH1: `margin:0;font:400 ${Math.round(33 * ds)}px/1.18 ${fH};letter-spacing:-.02em;color:${ink}`,
+      sMobGrid: `display:grid;grid-template-columns:1fr 1fr;gap:22px 16px;padding-top:20px`,
+      sAccentBtnDark: `padding:15px 30px;background:${ink};color:${paper};font:400 13px/1 'Noto Sans KR',sans-serif;letter-spacing:.05em;text-align:center;align-self:flex-start`,
+      sBtnGhost: `padding:15px 30px;border:1px solid ${line};color:${ink};font:400 13px/1 'Noto Sans KR',sans-serif;letter-spacing:.05em;text-align:center;align-self:flex-start`,
+      sNotice: `display:flex;align-items:center;justify-content:center;gap:14px;padding:16px ${pad}px;background:${panelBg};font:400 12px/1 'Noto Sans KR',sans-serif;color:${sub};margin-top:${Math.round(46 * dens)}px`,
+      sOverlay: `position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(26,26,24,.35);color:#fff;font:500 11px/1 ${fS};letter-spacing:.2em`,
+      sRankRow: `display:grid;grid-template-columns:56px 124px 1fr 180px 170px;align-items:center;gap:26px;padding:20px 0;border-bottom:1px solid ${line}`,
+      sRankNo: `font:400 ${Math.round(22 * ds)}px/1 ${fH};color:${muted}`,
+      sRankImg: `aspect-ratio:1/1;position:relative;background:repeating-linear-gradient(135deg,${img2} 0 6px,${paper} 6px 12px)`,
+      sCatRow: `display:grid;grid-template-columns:70px 1fr 1.25fr 200px;align-items:center;gap:30px;padding:28px 0;border-bottom:1px solid ${line}`,
+      sChip: `padding:7px 13px;border:1px solid ${line};background:${panelBg};font:300 12px/1 ${fB};color:${sub}`,
+      sStep: `display:flex;flex-direction:column;gap:13px;padding:34px 30px 38px 0;border-right:1px solid ${line}`,
+      sStepNo: `font:400 ${Math.round(32 * ds)}px/1 ${fH};color:${accent}`,
+      sSecTight: `padding:${Math.round(84 * dens)}px ${pad}px 0`,
+      sUtilMob: `padding:9px 20px;background:${panelBg};font:400 9.5px/1.4 ${fS};letter-spacing:.06em;color:${accent};text-align:center`,
+      sWordMob: `font:400 ${Math.round(14 * ds)}px/1 ${fH};letter-spacing:.2em;color:${ink}`,
+      sRankRowMob: `display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid ${line}`,
+      sRankImgMob: `width:62px;height:62px;flex:none;background:repeating-linear-gradient(135deg,${img2} 0 5px,${paper} 5px 10px)`,
+      sCatRowMob: `display:flex;flex-direction:column;gap:11px;padding:18px 0;border-bottom:1px solid ${line}`,
+      sStepMob: `display:flex;flex-direction:column;gap:8px;padding:18px 0;border-bottom:1px solid ${line}`,
+      sFootMob: `padding:32px 22px 28px;background:${panelBg};display:flex;flex-direction:column;gap:14px`
+    };
+  }
+
+  edit(list) {
+    const t = this._th;
+    return list.map(p => {
+      const dim = p.sold && t.soldMode === '흐리게';
+      return {
+        ...p,
+        wrapStyle: t.cardBase + (dim ? 'opacity:.5;' : ''),
+        padStyle: t.cardPad,
+        imgWrapStyle: t.imgPad,
+        labelOn: p.sold && t.soldMode === '라벨',
+        overOn: p.sold && t.soldMode === '이미지 오버레이',
+        ctaLabel: p.sold ? '재입고 알림 요청' : '장바구니 담기',
+        ctaStyle: p.sold ? t.ctaSold : t.ctaS,
+        enOn: t.showEn
+      };
+    });
+  }
+
+  renderVals() {
+    const P = (ko, en, cat, price, was, opt) => ({
+      ko, en, cat, price, was, sale: !!was, sold: !!(opt && opt.sold), avail: !(opt && opt.sold),
+      ph: (opt && opt.ph) || '제품 이미지 / product shot',
+      note: (opt && opt.note) || '',
+      spec: (opt && opt.spec) || '',
+      rank: (opt && opt.rank) || ''
+    });
+
+    const feat = [
+      P('밀랍 립밤', 'Beeswax Lip Balm', '뷰티', '14,400', '18,000', { ph: '립밤 단독 정물 / lip balm on paper' }),
+      P('리넨 오버셔츠', 'Linen Over Shirt', '의류', '48,000', '56,000', { ph: '셔츠 행어 컷 / shirt on hanger' }),
+      P('황동 계량 스푼', 'Brass Measuring Spoon', '생활 도구', '22,000', null, { ph: '스푼 3점 나란히 / spoons flat lay' }),
+      P('참깨 볶음 오일', 'Roasted Sesame Oil', '식품', '19,000', null, { ph: '오일 병 측광 / oil bottle side light', sold: true })
+    ];
+
+    const pop = [
+      P('무향 고체 비누', 'Unscented Bar Soap', '뷰티', '12,000', '15,000', { rank: '01', ph: '비누 2개 겹침 / stacked soap' }),
+      P('워싱 코튼 티셔츠', 'Washed Cotton Tee', '의류', '32,000', null, { rank: '02', ph: '티셔츠 접힌 컷 / folded tee' }),
+      P('스테인리스 집게', 'Steel Tongs', '생활 도구', '17,000', '21,000', { rank: '03', ph: '집게 단독 / tongs on linen' }),
+      P('현미 볶음차', 'Roasted Brown Rice Tea', '식품', '13,500', null, { rank: '04', ph: '차 봉투 정면 / tea pouch front' }),
+      P('린넨 앞치마', 'Linen Apron', '생활 도구', '39,000', '45,000', { rank: '05', ph: '앞치마 걸린 컷 / hanging apron', sold: true })
+    ];
+
+    const feat3 = [
+      P('밀랍 립밤', 'Beeswax Lip Balm', '뷰티 Beauty', '14,400', '18,000', { ph: '립밤 단독 정물, 종이 위 / lip balm on paper', note: '밀랍과 호호바만 넣어 향을 더하지 않았습니다. 겨울에도 굳지 않는 배합.', spec: '9g · 무향' }),
+      P('리넨 오버셔츠', 'Linen Over Shirt', '의류 Clothing', '48,000', '56,000', { ph: '셔츠 행어 컷, 측광 / shirt on hanger', note: '두 계절을 넘기며 부드러워지는 유럽산 리넨. 남녀 공용 3사이즈.', spec: '3 colours · S–L' }),
+      P('황동 계량 스푼', 'Brass Measuring Spoon', '생활 도구 Tools', '22,000', null, { ph: '스푼 3점 플랫레이 / spoons flat lay', note: '쓸수록 색이 앉는 무도장 황동. 1/2, 1, 2 큰술 3점 세트.', spec: '3 pcs · 무도장', sold: true })
+    ];
+
+    const fresh = [
+      P('코튼 워시 타월', 'Cotton Wash Towel', '생활 도구', '11,000', null, { ph: '타월 접힘 / folded towel' }),
+      P('올리브 비누 접시', 'Olive Soap Dish', '생활 도구', '16,000', '19,000', { ph: '비누 접시 / soap dish' }),
+      P('울 니트 비니', 'Wool Knit Beanie', '의류', '29,000', null, { ph: '비니 정면 / beanie front' }),
+      P('무화과 잼', 'Fig Preserve', '식품', '15,000', null, { ph: '잼 병 / jam jar', sold: true })
+    ];
+
+    const cats = [
+      { no: '01', label: '뷰티', en: 'Beauty', sub: '스킨케어 · 클렌징 · 메이크업 · 향', ph: '뷰티 카테고리 이미지', items: ['스킨케어', '클렌징', '메이크업', '헤어 · 바디', '향 · 퍼퓸', '선케어'] },
+      { no: '02', label: '의류', en: 'Clothing', sub: '상의 · 하의 · 한 벌 옷 · 모자 · 신발', ph: '의류 카테고리 이미지', items: ['상의', '하의', '한 벌 옷', '아우터', '모자', '벨트', '신발'] },
+      { no: '03', label: '식품', en: 'Food', sub: '차 · 오일 · 잼 · 선물 세트', ph: '식품 카테고리 이미지', items: ['차 · 커피', '오일 · 소스', '건과 · 곡물', '잼 · 스프레드', '선물 세트'] },
+      { no: '04', label: '생활 도구', en: 'Tools', sub: '주방 · 청소 · 문구 · 수납 · 패브릭', ph: '생활 도구 카테고리 이미지', items: ['주방 도구', '청소 도구', '문구', '수납', '리넨 · 패브릭'] }
+    ];
+
+    const steps = [
+      { no: '01', ko: '둘러보기', desc: '로그인 없이 모든 상품과 가격을 볼 수 있습니다.' },
+      { no: '02', ko: 'Google 로그인', desc: '장바구니에 담을 때 Google 계정으로 한 번만 로그인합니다.' },
+      { no: '03', ko: '주문 요청 보내기', desc: '장바구니에서 요청을 보내면 결제 없이 접수됩니다.' },
+      { no: '04', ko: '담당자 연락', desc: '재고와 배송, 결제 방법을 확인해 평일 4시간 내 연락드립니다.' }
+    ];
+
+    const recent = [
+      { ko: '밀랍 립밤' }, { ko: '워싱 코튼 티셔츠' }, { ko: '황동 계량 스푼' },
+      { ko: '현미 볶음차' }, { ko: '무향 고체 비누' }, { ko: '리넨 오버셔츠' }
+    ];
+
+    const foot = [
+      { ko: '쇼핑', en: 'Shop', items: ['뷰티', '의류', '식품', '생활 도구', '전체 상품'] },
+      { ko: '이용 안내', en: 'Guide', items: ['주문 요청 방법', '배송 · 반품', '재입고 알림', '자주 묻는 질문'] },
+      { ko: '문의', en: 'Contact', items: ['카카오톡 상담', '02-1000-0001', '대량구매 · 견적', 'hello@store-no1.kr'] }
+    ];
+
+    const foot4 = foot.concat([{ ko: '스토어', en: 'About', items: ['브랜드 소개', '공지사항', '개인정보 처리방침', '이용약관'] }]);
+
+    const th = this.theme();
+    this._th = th._t;
+
+    return {
+      ...th,
+      navA: this.nav('a'), navB: this.nav('b'), navC: this.nav('c'), navE: this.nav('e'), navF: this.nav('f'),
+      feat, pop, feat3, fresh, cats, steps, recent, foot, foot4,
+      edFeat3: this.edit(feat3), edPop: this.edit(pop), edFresh: this.edit(fresh), edFeat: this.edit(feat)
+    };
+  }
+}
+</script>
+</body>
+</html>

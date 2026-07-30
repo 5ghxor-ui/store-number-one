@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>관리자 — 스토어 넘버원</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500&family=Noto+Serif+KR:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500;700&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div class="util">
+  <span class="util-left">ADMIN · 관리자</span>
+  <span class="util-mid">주문 요청 관리 · 스토어 넘버원</span>
+  <span class="util-mid-mobile">관리자 · 주문 요청 관리</span>
+  <span class="util-right"><a href="index.html">스토어 홈 →</a></span>
+</div>
+
+<header class="mast">
+  <div class="mast-left"><a href="index.html" class="utillink">← 스토어</a></div>
+  <div class="wordmark-wrap">
+    <span class="word">STORE NUMBER ONE</span>
+    <span class="word-sub">관리자 페이지</span>
+  </div>
+  <div class="mast-right"><span class="utillink">관리자 님</span></div>
+</header>
+
+<!-- 대시보드 -->
+<section class="sec">
+  <div class="sechd">
+    <div class="sechd-left">
+      <span class="secno">01</span>
+      <h2 class="h2">대시보드</h2>
+      <span class="kicker">Dashboard — 오늘의 요약</span>
+    </div>
+  </div>
+  <div class="admin-metrics" id="metrics"></div>
+  <p class="admin-note">※ 프로토타입입니다. 실제 서비스에서는 이 페이지를 <strong>서버에서 관리자 권한을 검증</strong>해 지정된 관리자 계정만 접근하도록 막습니다. (URL 숨김 방식이 아님)</p>
+</section>
+
+<!-- 주문 요청 관리 -->
+<section class="sec">
+  <div class="sechd">
+    <div class="sechd-left">
+      <span class="secno">02</span>
+      <h2 class="h2">주문 요청 관리</h2>
+      <span class="kicker">Requests — 접수 순</span>
+    </div>
+  </div>
+  <div class="orders" id="orders"></div>
+</section>
+
+<div class="footbar" style="margin-top:74px">
+  <span>스토어 넘버원 관리자 · 내부용</span>
+  <span>© 2026 Store Number One</span>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/orders-store.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>스토어 넘버원 — STORE NUMBER ONE</title>
+<meta name="description" content="오래 쓸 물건을 골라 두는 편집 스토어. 결제 없이 주문을 요청하고, 담당자와 확인 후 받습니다." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500&family=Noto+Serif+KR:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500;700&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- 1) 유틸리티 바 -->
+<div class="util">
+  <span class="util-left">ISSUE 01 · 2026 SUMMER</span>
+  <span class="util-mid">결제 없음 · 주문 요청 후 담당자가 직접 연락드립니다</span>
+  <span class="util-mid-mobile">결제 없음 · 요청 후 담당자 연락</span>
+  <span class="util-right"><a href="#">카카오톡 상담</a><a href="#">02-1000-0001</a></span>
+</div>
+
+<!-- 2) 마스트헤드 -->
+<header class="mast">
+  <div class="mast-left">
+    <button class="hamburger" id="hamburger" aria-label="메뉴 열기"><span></span><span></span></button>
+    <a href="#" class="utillink">검색 Search</a>
+    <a href="#" class="utillink">공지</a>
+  </div>
+  <div class="wordmark-wrap">
+    <span class="word" id="wordmark">STORE NUMBER ONE</span>
+    <span class="word-sub">스토어 넘버원</span>
+  </div>
+  <div class="mast-right">
+    <a href="#" class="utillink hide-mob js-login">Google로 계속하기</a>
+    <a href="cart.html" class="utillink" id="cartLink">장바구니 (<span id="cartCount">0</span>)</a>
+  </div>
+</header>
+
+<!-- 3) 카테고리 내비 (JS 렌더) -->
+<nav class="navrow" id="catNav"></nav>
+
+<!-- 4) Hero (풀블리드 커버) -->
+<section>
+  <div class="hero-cover">
+    <span class="ph">cover image — 리넨 위 정물, 상품 3점, 자연광 / full-bleed cover</span>
+  </div>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <span class="kicker">Cover story — 오래 쓸 물건</span>
+      <h1 class="h1">파는 대신<br>골라 두었습니다</h1>
+    </div>
+    <div class="hero-right">
+      <p class="lead"><span class="dropcap">스</span>토어 넘버원에는 결제창이 없습니다. 뷰티 · 의류 · 식품 · 생활 도구 네 갈래에서 오래 두고 쓸 만한 것만 골라 소개하고, 마음에 드는 물건을 장바구니에 담아 주문 요청을 보내면 담당자가 재고와 배송을 확인해 직접 연락드립니다.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn-dark">전체 상품 보기</a>
+        <a href="#" class="btn-ghost">이용 방법</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5) 공지 스트립 -->
+<div class="notice">
+  <span class="secno">NOTICE</span>
+  <span>8/12–8/14 여름 휴무 · 이 기간 주문 요청은 8/17부터 순차 연락드립니다.</span>
+  <a href="#">공지 전체</a>
+</div>
+
+<!-- 6) 추천 상품 (섹션 01) -->
+<section class="sec">
+  <div class="sechd">
+    <div class="sechd-left">
+      <span class="secno">01</span>
+      <h2 class="h2">추천 상품</h2>
+      <span class="kicker">Featured — 이달의 선택</span>
+    </div>
+    <a href="#" class="utillink">전체 보기 →</a>
+  </div>
+  <div class="grid3" id="featGrid"></div>
+</section>
+
+<!-- 7) 인기 상품 (섹션 02) -->
+<section class="sec">
+  <div class="sechd">
+    <div class="sechd-left">
+      <span class="secno">02</span>
+      <h2 class="h2">인기 상품</h2>
+      <span class="kicker">Most requested — 요청 순</span>
+    </div>
+    <a href="#" class="utillink">전체 보기 →</a>
+  </div>
+  <div class="poplist" id="popList"></div>
+</section>
+
+<!-- 8) 최신 상품 (섹션 03) -->
+<section class="sec">
+  <div class="sechd">
+    <div class="sechd-left">
+      <span class="secno">03</span>
+      <h2 class="h2">최신 상품</h2>
+      <span class="kicker">Just arrived — 이번 주 입고</span>
+    </div>
+    <a href="#" class="utillink">전체 보기 →</a>
+  </div>
+  <div class="grid" id="freshGrid"></div>
+</section>
+
+<!-- 9) 카테고리 (섹션 04) -->
+<section class="sec">
+  <div class="sechd">
+    <div class="sechd-left">
+      <span class="secno">04</span>
+      <h2 class="h2">카테고리</h2>
+      <span class="kicker">Index — 대분류 4 · 하위 22</span>
+    </div>
+  </div>
+  <div class="catlist" id="catRows"></div>
+</section>
+
+<!-- 10) 대량구매 · 견적 문의 배너 -->
+<section class="accent-block">
+  <div class="ab-left">
+    <span class="ab-kicker">For business</span>
+    <h3>대량구매 · 도매 견적 문의</h3>
+    <p>10개 이상 동일 상품, 사업자 납품, 기업 선물 건은 별도 단가로 안내드립니다. 요청서를 남기시면 담당자가 확인 후 연락드립니다.</p>
+  </div>
+  <div class="ab-right">
+    <a href="#" class="ab-btn">견적 문의하기</a>
+    <a href="#" class="ab-btn2">카카오톡 상담</a>
+  </div>
+</section>
+
+<!-- 11) 스토어 이용 방법 (섹션 05) -->
+<section class="sec">
+  <div class="sechd">
+    <div class="sechd-left">
+      <span class="secno">05</span>
+      <h2 class="h2">스토어 이용 방법</h2>
+      <span class="kicker">How it works — 결제 단계 없음</span>
+    </div>
+  </div>
+  <div class="steprow" id="stepRow" style="padding-top:0"></div>
+</section>
+
+<!-- 12) 최근 본 상품 -->
+<section class="sec-tight">
+  <div class="recent-hd">
+    <h3>최근 본 상품</h3>
+    <span class="kicker">Recently viewed</span>
+  </div>
+  <div class="recentgrid" id="recentGrid"></div>
+</section>
+
+<!-- 13) 푸터 -->
+<footer class="foot">
+  <div class="foot-brand">
+    <span class="word">STORE NUMBER ONE</span>
+    <span class="body">오래 쓸 물건을 골라 두는 편집 스토어. 결제 없이 주문을 요청하고, 담당자와 확인 후 받습니다.</span>
+    <div class="foot-social">
+      <a href="#" class="meta">INSTAGRAM</a><a href="#" class="meta">KAKAO</a><a href="#" class="meta">NAVER</a>
+    </div>
+  </div>
+  <!-- 링크 컬럼 (JS 렌더) — foot-brand 뒤에 삽입 -->
+  <div class="foot-cols-holder" id="footCols" style="display:contents"></div>
+</footer>
+<div class="footbar">
+  <span>스토어 넘버원 · 사업자등록번호 000-00-00000 · 서울시 성동구 000로 00 · 대표 000</span>
+  <span>© 2026 Store Number One</span>
+</div>
+
+<!-- 로그인 유도 모달 -->
+<div class="modal-back" id="loginModal">
+  <div class="modal">
+    <span class="kicker">Members only</span>
+    <h3>Google 로그인이 필요해요</h3>
+    <p>장바구니에 담고 주문을 요청하려면 Google 계정으로 한 번만 로그인하면 됩니다. 결제 단계는 없습니다.</p>
+    <button class="btn-dark" id="doLogin">Google로 계속하기</button>
+    <button class="modal-close" id="closeLogin">다음에 하기</button>
+  </div>
+</div>
+
+<!-- 모바일 메뉴 -->
+<div class="mobmenu-back" id="mobMenuBack">
+  <nav class="mobmenu" id="mobMenu"><h4>STORE Nº1</h4></nav>
+</div>
+
+<!-- 담김 토스트 -->
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/cart-store.js"></script>
+<script src="js/auth-store.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

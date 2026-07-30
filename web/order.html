@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>주문 요청 — 스토어 넘버원</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500&family=Noto+Serif+KR:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500;700&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div class="util">
+  <span class="util-left">ISSUE 01 · 2026 SUMMER</span>
+  <span class="util-mid">결제 없음 · 주문 요청 후 담당자가 직접 연락드립니다</span>
+  <span class="util-mid-mobile">결제 없음 · 요청 후 담당자 연락</span>
+  <span class="util-right"><a href="#">카카오톡 상담</a><a href="#">02-1000-0001</a></span>
+</div>
+
+<header class="mast">
+  <div class="mast-left"><a href="cart.html" class="utillink">← 장바구니</a></div>
+  <div class="wordmark-wrap">
+    <a href="index.html"><span class="word">STORE NUMBER ONE</span></a>
+    <span class="word-sub">스토어 넘버원</span>
+  </div>
+  <div class="mast-right"><a href="index.html" class="utillink">홈</a></div>
+</header>
+
+<section class="sec" id="orderSection">
+  <div class="sechd">
+    <div class="sechd-left">
+      <span class="secno">REQUEST</span>
+      <h2 class="h2">주문 요청</h2>
+      <span class="kicker">Order request — 결제 없음</span>
+    </div>
+  </div>
+  <div id="orderBody"></div>
+</section>
+
+<footer class="foot" style="margin-top:74px">
+  <div class="foot-brand">
+    <span class="word">STORE NUMBER ONE</span>
+    <span class="body">오래 쓸 물건을 골라 두는 편집 스토어. 결제 없이 주문을 요청하고, 담당자와 확인 후 받습니다.</span>
+    <div class="foot-social"><a href="#" class="meta">INSTAGRAM</a><a href="#" class="meta">KAKAO</a><a href="#" class="meta">NAVER</a></div>
+  </div>
+  <div id="footCols" style="display:contents"></div>
+</footer>
+<div class="footbar">
+  <span>스토어 넘버원 · 사업자등록번호 000-00-00000 · 서울시 성동구 000로 00 · 대표 000</span>
+  <span>© 2026 Store Number One</span>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/cart-store.js"></script>
+<script src="js/auth-store.js"></script>
+<script src="js/orders-store.js"></script>
+<script src="js/order.js"></script>
+</body>
+</html>

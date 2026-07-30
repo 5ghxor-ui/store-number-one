@@ -1,0 +1,22 @@
+# 의존성
+node_modules/
+
+# 환경변수 (비밀키)
+.env
+.env.local
+.env.*.local
+
+# 빌드/배포
+.vercel/
+.next/
+dist/
+build/
+
+# 작업 임시물
+_shots/
+_design_import/_xlsx/
+
+# OS/에디터
+.DS_Store
+Thumbs.db
+*.log
